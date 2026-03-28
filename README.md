@@ -1,4 +1,4 @@
-# Dev Anna — Frontend Developer Portfolio
+# Dev Anna Frontend Developer Portfolio
 
 A modern, elegant portfolio built with React, Tailwind CSS, and Vite.
 
