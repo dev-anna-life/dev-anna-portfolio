@@ -44,24 +44,24 @@ export default function Projects() {
                     <div key={p.name}
                         className="rounded-3xl overflow-hidden border border-blush/15 hover:-translate-y-2 hover:shadow-xl hover:shadow-blush/10 transition-all duration-300">
                         <div className="relative overflow-hidden h-52">
-                            <img 
-                            src={p.img} 
-                            alt={p.name} 
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                            <img
+                                src={p.img}
+                                alt={p.name}
+                                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-blush/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 
-                            <a
-                            href={p.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="bg-white text-rose font-display font-bold text-sm px-6 py-3 rounded-full hover:bg-rose hover:text-white transition-colors duration-200"
-                            >
-                                View Live style →
-                            </a>
+                                <a
+                                    href={p.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="bg-white text-rose font-display font-bold text-sm px-6 py-3 rounded-full hover:bg-rose hover:text-white transition-colors duration-200"
+                                >
+                                    View Live style →
+                                </a>
                             </div>
                         </div>
-                        
+
                         <div className="p-6 bg-rose">
                             <div className="flex gap-2 flex-wrap mb-3">
                                 {p.tags.map(t => (
