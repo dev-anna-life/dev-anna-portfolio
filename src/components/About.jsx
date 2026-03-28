@@ -1,4 +1,4 @@
-import profileImg from '../assets/profile1.jpg'
+import profileImg from '../assets/profile1.png'
 
 const cards = [
   { title: 'Design-first', text: 'Beauty and usability always come together.', bg: 'bg-rose text-white' },

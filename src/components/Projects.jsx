@@ -67,7 +67,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-rose/0 group-hover:bg-rose/60 transition-all duration-500" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-display font-black text-white text-xl mb-2">
+                  <h3 className="font-display font-black text-white text-xl mb-2 mt-4">
                     {p.name}
                   </h3>
                   <div className="flex gap-2 flex-wrap mb-3">
