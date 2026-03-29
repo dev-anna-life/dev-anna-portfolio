@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <span className="text-rose text-xs">
-          © 2025 Ugwuanyi Annastesia Amarachi
+          © 2026 Ugwuanyi Annastesia Amarachi
         </span>
 
       </div>
