@@ -109,7 +109,7 @@ export default function Skills() {
                                 >
                                     {skill.name}
                                 </h3>
-                                <p className="text-white text-sm leading-relaxed relative z-10">
+                                <p className="text-white text-sm leading-relaxed relative z-10 hidden md:block">
                                     {skill.desc}
                                 </p>
                             </div>
