@@ -73,7 +73,7 @@ export default function Projects() {
                     {p.desc}
                   </p>
                   <span className="text-blush text-sm font-bold flex items-center gap-2">
-                    View Project →
+                    View Live Demo →
                   </span>
                 </div>
               </div>
