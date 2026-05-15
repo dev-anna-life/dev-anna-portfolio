@@ -10,7 +10,7 @@ const socials = [
 ]
 
 export default function Footer() {
-  
+
   return (
     <footer className="px-8 md:px-16 py-8 bg-white">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
