@@ -34,7 +34,7 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a href="/resume.pdf" download
+          <a href="/resume.html" target="_blank"
             className="hidden md:inline-flex border border-forest text-forest px-5 py-2 rounded-full text-sm font-medium hover:bg-forest hover:text-cream transition-all duration-200">
             Download CV ↓
           </a>
@@ -42,7 +42,7 @@ export default function Navbar() {
             className="hidden md:inline-block bg-forest text-cream text-sm font-medium px-5 py-2 rounded-full hover:bg-canopy transition-colors duration-200">
             Let's Talk →
           </a>
-          <button onClick={() => setOpen(!open)}
+          <button onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'}
             className="md:hidden text-forest text-2xl focus:outline-none">
             {open ? '✕' : '☰'}
           </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
             className="bg-forest text-cream px-6 py-2 rounded-full text-sm font-medium hover:bg-canopy transition-colors">
             Let's Talk →
           </a>
-          <a href="/resume.pdf" download onClick={() => setOpen(false)}
+          <a href="/resume.html" target="_blank" onClick={() => setOpen(false)}
             className="border border-forest text-forest px-6 py-2 rounded-full text-sm font-medium hover:bg-forest hover:text-cream transition-all duration-200">
             Download CV ↓
           </a>

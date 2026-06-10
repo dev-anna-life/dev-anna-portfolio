@@ -2,9 +2,9 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 
-const EMAILJS_SERVICE_ID = 'service_08ppscs'
-const EMAILJS_TEMPLATE_ID = 'template_65l6x9e'
-const EMAILJS_PUBLIC_KEY = 'Hk863i4zkcRGIr0im'
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const socials = [
   { icon: <FaGithub />, label: 'GitHub', href: 'https://github.com/dev-anna-life' },
@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <>
       {/* Floating WhatsApp */}
-      <a href="https://wa.me/2348146790636" target="_blank" rel="noreferrer" title="Chat on WhatsApp"
+      <a href="https://wa.me/2348146790636" target="_blank" rel="noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp"
         className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 hover:bg-green-600 transition-all duration-200 animate-float">
         <FaWhatsapp />
       </a>
@@ -75,7 +75,6 @@ export default function Contact() {
 
           {/* Header — slide up */}
           <div className="text-center mb-12 reveal">
-            <span className="text-5xl animate-float block mb-6">✉️</span>
             <p className="text-sage text-xs font-bold uppercase tracking-widest mb-3">Contact</p>
             <h2 className="font-display font-black text-4xl text-cream leading-tight mb-3">
               Let's create something amazing
@@ -109,7 +108,7 @@ export default function Contact() {
 
           {status === 'success' && (
             <div className="bg-green-50 border border-green-200 text-green-700 rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">
-              Message sent! I'll get back to you soon. 🌿
+              Message sent! I'll get back to you soon.
             </div>
           )}
           {status === 'error' && (
@@ -149,7 +148,7 @@ export default function Contact() {
 
           <div className="reveal flex justify-center gap-3 mt-10">
             {socials.map(s => (
-              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" title={s.label}
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" title={s.label} aria-label={s.label}
                 className="w-11 h-11 rounded-full border border-cream/20 bg-white text-forest text-lg flex items-center justify-center hover:-translate-y-1 hover:bg-forest hover:text-cream hover:border-forest transition-all duration-200">
                 {s.icon}
               </a>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Anna - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #1a472a;
+      background: #f5f0e8;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .header {
+      background: #1a472a;
+      color: #f5f0e8;
+      padding: 48px 56px 40px;
+    }
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .header h1 span { color: #a8c5a0; }
+    .header .subtitle {
+      font-size: 18px;
+      color: #a8c5a0;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .header .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #f5f0e8;
+    }
+    .header .contact-row a { color: #f5f0e8; text-decoration: none; }
+    .header .contact-row a:hover { color: #a8c5a0; }
+    .body { padding: 40px 56px; }
+    .section { margin-bottom: 28px; }
+    .section:last-child { margin-bottom: 0; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a472a;
+      border-bottom: 2px solid #1a472a;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+    .entry { margin-bottom: 18px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .entry-title { font-size: 16px; font-weight: 700; color: #1a472a; }
+    .entry-company { font-size: 14px; font-weight: 500; color: #2d6a3f; }
+    .entry-date { font-size: 13px; color: #a8c5a0; font-weight: 500; white-space: nowrap; }
+    .entry-desc { font-size: 14px; color: #4a5a4a; margin-top: 6px; line-height: 1.5; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #f5f0e8;
+      color: #1a472a;
+      border: 1px solid #d4cfc7;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    .skill-cat {
+      margin-bottom: 12px;
+    }
+    .skill-cat-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2d6a3f;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .skill-items .tag { background: #e8f0e5; }
+    .summary-text {
+      font-size: 14px;
+      color: #4a5a4a;
+      line-height: 1.7;
+    }
+    hr { border: none; border-top: 1px solid #e0dbd3; margin: 20px 0; }
+    @media print {
+      body { padding: 0; background: #fff; }
+      .page { box-shadow: none; border-radius: 0; }
+      .header { padding: 36px 48px 28px; }
+      .body { padding: 28px 48px; }
+      .entry { break-inside: avoid; }
+      .section { break-inside: avoid; }
+    }
+    @media (max-width: 600px) {
+      .header { padding: 32px 24px; }
+      .body { padding: 24px; }
+      .header h1 { font-size: 32px; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <h1>Ugwuanyi Annastesia Amarachi<span>.</span></h1>
+      <div class="subtitle">Full-Stack Developer & Digital Marketer</div>
+      <div class="contact-row">
+        <span>annastesiaugwuanyi@gmail.com</span>
+        <span>+234 8146790636</span>
+        <a href="https://github.com/dev-anna-life" target="_blank">github.com/dev-anna-life</a>
+        <a href="https://www.linkedin.com/in/annastesia-amarachi-ugwuanyi-3318a3390/" target="_blank">LinkedIn</a>
+        <span>Nigeria</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">
+          Full-Stack Developer and Digital Marketer with 4+ years of hands-on experience building
+          modern web applications and driving growth through data-driven marketing campaigns.
+          Skilled across the MERN stack and proficient in paid ads, email automation, and
+          conversion optimization. Passionate about delivering end-to-end solutions — from
+          writing clean code to running ads that convert.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div>
+              <span class="entry-title">Full-Stack Developer & Digital Marketer</span>
+              <span class="entry-company"> — Self-Employed</span>
+            </div>
+            <span class="entry-date">2024 - Present</span>
+          </div>
+          <div class="entry-desc">
+            Building full-stack web applications for clients across e-commerce, beauty, and business niches.
+            Managing digital marketing campaigns including Google Ads, Facebook Ads, email automation,
+            and Klaviyo setup. End-to-end delivery from database design to deployment and ad launch.
+          </div>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Google Ads</span>
+            <span class="tag">Facebook Ads</span>
+            <span class="tag">Klaviyo</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div>
+              <span class="entry-title">Frontend Development Trainee</span>
+              <span class="entry-company"> — Nanocodes Programming Limited</span>
+            </div>
+            <span class="entry-date">2023 - 2024</span>
+          </div>
+          <div class="entry-desc">
+            Completed an intensive frontend development program. Built real-world projects covering
+            HTML, CSS, JavaScript, and modern frameworks. Learned industry best practices for
+            responsive design, version control, and deployment.
+          </div>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Responsive Design</span>
+            <span class="tag">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skill-cat">
+          <div class="skill-cat-title">Frontend</div>
+          <div class="skill-items">
+            <span class="tag">HTML5 & CSS3</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">React</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <div class="skill-cat-title">Backend & Database</div>
+          <div class="skill-items">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <div class="skill-cat-title">Digital Marketing</div>
+          <div class="skill-items">
+            <span class="tag">Google Ads</span>
+            <span class="tag">Facebook Ads</span>
+            <span class="tag">Product Ads</span>
+            <span class="tag">Klaviyo Setup</span>
+            <span class="tag">Email Automation</span>
+            <span class="tag">Product Research</span>
+            <span class="tag">Lead Generation</span>
+            <span class="tag">Product Video</span>
+          </div>
+        </div>
+
+        <div class="skill-cat">
+          <div class="skill-cat-title">Tools & Workflow</div>
+          <div class="skill-items">
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Fashion Store</span>
+            <a href="https://fashion-store-six-ivory.vercel.app/" target="_blank" style="color:#2d6a3f;font-size:13px;font-weight:500;text-decoration:none;">View Live →</a>
+          </div>
+          <div class="entry-desc">E-commerce fashion interface with product listings, cart functionality, and smooth animations built with React and Tailwind.</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Amaka Beauty Empire</span>
+            <a href="https://amaka-beauty-empire.vercel.app/" target="_blank" style="color:#2d6a3f;font-size:13px;font-weight:500;text-decoration:none;">View Live →</a>
+          </div>
+          <div class="entry-desc">Beauty brand website with elegant product showcases, responsive design, and polished UI.</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Multi-Preneur</span>
+            <a href="https://dev-anna-life.github.io/Multi-Preneur/" target="_blank" style="color:#2d6a3f;font-size:13px;font-weight:500;text-decoration:none;">View Live →</a>
+          </div>
+          <div class="entry-desc">Responsive multi-entrepreneur landing page with optimized performance and Tailwind styling.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Frontend Development Program</span>
+            <span class="entry-date">2023 - 2024</span>
+          </div>
+          <div class="entry-company" style="margin-top:2px;">Nanocodes Programming Limited, Nsukka</div>
+          <div class="entry-desc">
+            Intensive hands-on training in modern frontend development. Built multiple real-world
+            projects and gained practical experience with industry-standard tools and workflows.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Frontend Development Certificate</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-company" style="margin-top:2px;">Nanocodes Programming Limited</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

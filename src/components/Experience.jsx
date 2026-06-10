@@ -1,12 +1,12 @@
 const experiences = [
   {
-    role: 'Frontend Developer (Self-Employed)',
-    company: 'Freelance',
+    role: 'Full-Stack Developer',
+    company: 'Self-Employed',
     period: '2024 - Present',
     location: 'Nigeria',
     type: 'Remote',
-    desc: 'Building and delivering custom websites and web apps for clients across different niches - e-commerce, beauty brands, and business landing pages.',
-    stack: ['React', 'Tailwind CSS', 'JavaScript', 'Vercel'],
+    desc: 'Building and delivering full-stack web applications for clients across e-commerce, beauty brands, business landing pages & more. End-to-end development from database design to deployment.',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Vercel'],
     current: true,
   },
   {
@@ -15,18 +15,8 @@ const experiences = [
     period: '2023 - 2024',
     location: 'Nsukka, Nigeria',
     type: 'On-site',
-    desc: 'Completed an intensive frontend development program at Nanocodes, Nsukka. Built real-world projects covering HTML, CSS, JavaScript and responsive design principles.',
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-    current: false,
-  },
-  {
-    role: 'Self-Taught: React & Tailwind CSS',
-    company: 'Independent Learning',
-    period: '2024',
-    location: 'Remote',
-    type: 'Self-paced',
-    desc: 'Independently mastered React and Tailwind CSS through documentation, project-based learning and building personal projects deployed on Vercel and GitHub Pages.',
-    stack: ['React', 'Tailwind CSS', 'Git', 'GitHub'],
+    desc: 'Completed an intensive frontend development program at Nanocodes, Nsukka. Built real-world projects covering HTML, CSS, JavaScript and modern frameworks. Laid the foundation for my full-stack journey.',
+    stack: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Tailwind CSS', 'Responsive Design'],
     current: false,
   },
 ]

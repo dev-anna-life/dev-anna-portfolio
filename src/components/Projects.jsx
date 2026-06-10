@@ -1,6 +1,7 @@
-import fashionImg from '../assets/fashion-store.png'
-import amakaImg from '../assets/amaka-beauty.png'
-import multipreneurImg from '../assets/multi-preneur.png'
+import fashionImg from '../assets/fashion-store.jpg'
+import amakaImg from '../assets/amaka-beauty.jpg'
+import multipreneurImg from '../assets/multi-preneur.jpg'
+import realtorImg from '../assets/mr-multipreneur-realtor.jpg'
 
 const projects = [
   {
@@ -19,10 +20,17 @@ const projects = [
   },
   {
     img: multipreneurImg,
-    name: 'Multi-Preneur',
+    name: 'Multipreneur',
     tags: ['HTML', 'Tailwind', 'JavaScript'],
-    desc: 'A multi-entrepreneur landing page with responsive layouts and Tailwind styling.',
+    desc: 'A multipreneur landing page with responsive layouts and Tailwind styling.',
     link: 'https://dev-anna-life.github.io/Multi-Preneur/',
+  },
+  {
+    img: realtorImg,
+    name: 'MrMultipreneur Realtor',
+    tags: ['Next.js', 'Tailwind', 'Nodemailer'],
+    desc: 'A modern real estate landing page for property inspection bookings with a sleek responsive design.',
+    link: 'https://mr-multipreneur-realtor.vercel.app/',
   },
 ]
 
@@ -49,7 +57,7 @@ export default function Projects() {
             <a key={p.name} href={p.link} target="_blank" rel="noreferrer"
               className={`group relative overflow-hidden rounded-2xl block reveal stagger-${i + 1}`}>
               <div className="relative overflow-hidden">
-                <img src={p.img} alt={p.name}
+                <img src={p.img} alt={`${p.name} project screenshot`} loading="lazy" width="400" height="288"
                   className="w-full h-72 object-cover object-top transition-all duration-700 group-hover:scale-110 group-hover:blur-sm" />
                 <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/75 transition-all duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500">

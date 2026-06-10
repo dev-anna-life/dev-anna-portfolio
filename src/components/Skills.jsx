@@ -1,16 +1,17 @@
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaGithub } from 'react-icons/fa'
-import { SiTailwindcss } from 'react-icons/si'
-import { MdDevices } from 'react-icons/md'
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase } from 'react-icons/fa'
+import { SiTailwindcss, SiExpress, SiMongodb } from 'react-icons/si'
 
 const skills = [
-  { name: 'HTML5',             icon: FaHtml5,       color: '#E34F26', desc: 'Structures and defines web content with semantic, accessible markup.' },
-  { name: 'CSS3',              icon: FaCss3Alt,     color: '#1572B6', desc: 'Styles layouts, colors, fonts, animations across all screen sizes.' },
-  { name: 'JavaScript',        icon: FaJs,          color: '#F7DF1E', desc: 'Adds interactivity, logic, and dynamic behavior to web pages.' },
-  { name: 'React',             icon: FaReact,       color: '#61DAFB', desc: 'Component-based library for building fast, scalable user interfaces.' },
-  { name: 'Tailwind CSS',      icon: SiTailwindcss, color: '#38BDF8', desc: 'Utility-first CSS for rapid, consistent, fully responsive styling.' },
-  { name: 'Responsive Design', icon: MdDevices,     color: '#a8c5a0', desc: 'Fluid layouts that look perfect on every device and screen size.' },
-  { name: 'Git',               icon: FaGitAlt,      color: '#F05032', desc: 'Version control — tracks changes and keeps project history clean.' },
-  { name: 'GitHub',            icon: FaGithub,      color: '#f5f0e8', desc: 'Hosts repositories, showcases work and enables team collaboration.' },
+  { name: 'HTML5',             icon: FaHtml5,       color: '#E34F26', desc: 'Semantic, accessible markup for modern web applications.' },
+  { name: 'CSS3',              icon: FaCss3Alt,     color: '#1572B6', desc: 'Responsive layouts, animations, and polished visual design.' },
+  { name: 'JavaScript',        icon: FaJs,          color: '#F7DF1E', desc: 'Core language powering interactive web experiences.' },
+  { name: 'React',             icon: FaReact,       color: '#61DAFB', desc: 'Component-based library for building fast, scalable UIs.' },
+  { name: 'Node.js',           icon: FaNodeJs,      color: '#339933', desc: 'Server-side JavaScript runtime for building scalable backends.' },
+  { name: 'Express.js',        icon: SiExpress,     color: '#f5f0e8', desc: 'Fast, minimalist web framework for Node.js REST APIs.' },
+  { name: 'MongoDB',           icon: SiMongodb,     color: '#47A248', desc: 'NoSQL database for flexible, scalable data storage.' },
+  { name: 'REST APIs',         icon: FaDatabase,    color: '#a8c5a0', desc: 'Design and integration of robust RESTful API services.' },
+  { name: 'Tailwind CSS',      icon: SiTailwindcss, color: '#38BDF8', desc: 'Utility-first CSS for rapid, consistent styling.' },
+  { name: 'Git & GitHub',      icon: FaGitAlt,      color: '#F05032', desc: 'Version control, collaboration, and CI/CD workflows.' },
 ]
 
 export default function Skills() {
@@ -26,7 +27,7 @@ export default function Skills() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 reveal">
-          {[['1+', 'Year Experience'], ['3', 'Projects Deployed'], ['8', 'Technologies'], ['100%', 'Dedication']].map(([num, label]) => (
+          {[['4+', 'Years Experience'], ['4', 'Projects Deployed'], ['10', 'Technologies'], ['100%', 'Dedication']].map(([num, label]) => (
             <div key={label} className="border border-cream/20 rounded-2xl p-5 text-center hover:border-sage transition-all duration-300">
               <div className="font-display font-black text-3xl text-cream mb-1">{num}</div>
               <div className="text-xs mt-2 text-cream/50 font-medium">{label}</div>
@@ -34,7 +35,7 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {skills.map((skill, i) => {
             const Icon = skill.icon
             return (

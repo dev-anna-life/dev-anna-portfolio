@@ -1,12 +1,15 @@
+import { lazy, Suspense } from 'react'
 import { useReveal } from './hooks/useReveal'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import Experience from './components/Experience'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
 import PageTransition from './components/PageTransition'
+import { ExperienceSkeleton, SkillsSkeleton, ProjectsSkeleton, ContactSkeleton } from './components/Skeleton'
+
+const Experience = lazy(() => import('./components/Experience'))
+const Skills = lazy(() => import('./components/Skills'))
+const Projects = lazy(() => import('./components/Projects'))
+const Contact = lazy(() => import('./components/Contact'))
 
 export default function App() {
   useReveal()
@@ -18,13 +21,21 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Suspense fallback={<ExperienceSkeleton />}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<SkillsSkeleton />}>
+          <Skills />
+        </Suspense>
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <Projects />
+        </Suspense>
+        <Suspense fallback={<ContactSkeleton />}>
+          <Contact />
+        </Suspense>
       </main>
       <footer className="bg-bark text-cream/40 text-xs text-center py-6 tracking-wide font-sans">
-        © {new Date().getFullYear()} Dev Anna · Crafted with React + Tailwind 🌿
+        &copy; {new Date().getFullYear()} Dev Anna &middot; Crafted with React + Tailwind
       </footer>
     </>
   )

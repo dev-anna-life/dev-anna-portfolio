@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 export function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+  const observerRef = useRef(null)
 
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -16,7 +16,22 @@ export function useReveal() {
       { threshold: 0.12, rootMargin: '0px 0px -50px 0px' }
     )
 
-    els.forEach(el => observer.observe(el))
-    return () => observer.disconnect()
+    observerRef.current = observer
+
+    const observeRevealElements = () => {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        observer.observe(el)
+      })
+    }
+
+    observeRevealElements()
+
+    const mutationObserver = new MutationObserver(observeRevealElements)
+    mutationObserver.observe(document.getElementById('root'), { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 }
