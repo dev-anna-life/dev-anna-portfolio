@@ -30,7 +30,7 @@ const projects = [
     name: 'MrMultipreneur Realtor',
     tags: ['Next.js', 'Tailwind', 'Nodemailer'],
     desc: 'A modern real estate landing page for property inspection bookings with a sleek responsive design.',
-    link: 'https://mr-multipreneur-realtor.vercel.app/',
+    link: 'https://mr-multipreneur-realtor-6779.vercel.app/',
   },
 ]
 
