@@ -7,17 +7,17 @@
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
-  background-color: #fcf9f2;
-  color: #1e4d28;
+  background-color: #f5f0e8;
+  color: #1a472a;
   font-family: 'DM Sans', sans-serif;
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #efe7d8; }
-::-webkit-scrollbar-thumb { background: #1e4d28; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #e5dccc; }
+::-webkit-scrollbar-thumb { background: #1a472a; border-radius: 3px; }
 
 .photo-glow {
-  filter: drop-shadow(0 0 40px rgba(30, 77, 40, 0.25));
+  filter: drop-shadow(0 0 40px rgba(26, 71, 42, 0.2));
 }
 
 @keyframes progressFill {

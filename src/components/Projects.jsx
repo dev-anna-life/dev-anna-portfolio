@@ -11,7 +11,7 @@ const projects = [
     tags: ['React', 'Tailwind'],
     desc: 'A vibrant e-commerce fashion interface with product listings, cart functionality & smooth animations.',
     link: 'https://fashion-store-six-ivory.vercel.app/',
-    github: '#',
+    github: 'https://github.com/dev-anna-life/Fashion-Store',
   },
   {
     img: amakaImg,
@@ -19,7 +19,7 @@ const projects = [
     tags: ['React', 'Tailwind'],
     desc: 'A glowing beauty brand website with elegant product showcases and smooth UI.',
     link: 'https://amaka-beauty-empire.vercel.app/',
-    github: '#',
+    github: 'https://github.com/dev-anna-life/Amaka-Beauty-Empire',
   },
   {
     img: multipreneurImg,
@@ -27,7 +27,7 @@ const projects = [
     tags: ['HTML', 'Tailwind', 'JavaScript'],
     desc: 'A multipreneur landing page with responsive layouts and Tailwind styling.',
     link: 'https://dev-anna-life.github.io/Multi-Preneur/',
-    github: '#',
+    github: 'https://github.com/dev-anna-life/Multi-Preneur',
   },
   {
     img: realtorImg,
@@ -35,7 +35,7 @@ const projects = [
     tags: ['Next.js', 'Tailwind', 'Nodemailer'],
     desc: 'A modern real estate landing page for property inspection bookings with a sleek responsive design.',
     link: 'https://mr-multipreneur-realtor-6779.vercel.app/',
-    github: '#',
+    github: 'https://github.com/dev-anna-life/mr-multipreneur-realtor',
   },
 ]
 
