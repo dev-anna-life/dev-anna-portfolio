@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <>
       <a href="https://wa.me/2348146790636" target="_blank" rel="noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp"
-        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 hover:bg-green-600 transition-all duration-200 animate-float">
+        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-primary-accent text-white rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 hover:bg-primary-light transition-all duration-200 animate-float">
         <FaWhatsapp />
       </a>
 
@@ -96,7 +96,7 @@ export default function Contact() {
                 </a>
                 <a href="https://wa.me/2348146790636" target="_blank" rel="noreferrer"
                   className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-green-500 group-hover:bg-green-500 group-hover:text-white transition-all duration-200">
+                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary-accent group-hover:bg-primary-accent group-hover:text-white transition-all duration-200">
                     <FaWhatsapp />
                   </div>
                   <div>

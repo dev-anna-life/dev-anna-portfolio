@@ -15,7 +15,7 @@ export default function Home() {
   useReveal()
 
   return (
-    <main className="bg-dark-bg min-h-screen">
+    <main className="bg-dark-bg text-text-body font-sans min-h-screen">
       <PageTransition />
       <Navbar />
       <Hero />
