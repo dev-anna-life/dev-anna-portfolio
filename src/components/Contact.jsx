@@ -58,8 +58,8 @@ export default function Contact() {
   }
 
   const inputCls = (f) =>
-    `px-4 py-3 rounded-xl border text-sm outline-none transition-colors bg-dark-box text-text-main placeholder:text-text-muted
-    ${errors[f] ? 'border-red-400 bg-red-900/20' : 'border-dark-box focus:border-primary'}`
+    `px-4 py-3 rounded-xl border text-sm outline-none transition-colors bg-dark-bg/50 text-text-main placeholder:text-text-muted
+    ${errors[f] ? 'border-red-400 bg-red-900/20' : 'border-white/10 focus:border-primary'}`
 
   return (
     <>
@@ -80,7 +80,7 @@ export default function Contact() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <div className="reveal-left bg-dark-card border border-dark-box rounded-3xl p-7">
+            <div className="reveal-left glass rounded-3xl p-7">
               <h3 className="font-display font-bold text-xl text-text-main mb-6">Get In Touch</h3>
               <div className="space-y-5">
                 <a href="https://mail.google.com/mail/?view=cm&to=annastesiaugwuanyi@gmail.com"
@@ -104,7 +104,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary">
                     <FaGithub />
                   </div>
                   <div>
@@ -113,7 +113,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary">
                     <FaLinkedinIn />
                   </div>
                   <div>
@@ -127,7 +127,7 @@ export default function Contact() {
                   const Icon = s.icon
                   return (
                     <a key={s.label} href={s.href} target="_blank" rel="noreferrer" title={s.label} aria-label={s.label}
-                      className="w-9 h-9 rounded-full border border-dark-box bg-dark-bg text-text-muted text-sm flex items-center justify-center hover:-translate-y-1 hover:bg-primary hover:text-white hover:border-primary transition-all duration-200">
+                      className="w-9 h-9 rounded-full border border-white/10 bg-dark-bg/50 text-text-muted text-sm flex items-center justify-center hover:-translate-y-1 hover:bg-primary hover:text-white hover:border-primary transition-all duration-200">
                       <Icon />
                     </a>
                   )
@@ -135,7 +135,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="reveal-right bg-dark-card border border-dark-box rounded-3xl p-7">
+            <div className="reveal-right glass rounded-3xl p-7">
 
           {status === 'success' && (
             <div className="bg-primary/20 border border-primary text-primary-accent rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">

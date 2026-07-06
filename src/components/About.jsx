@@ -73,7 +73,7 @@ the right audience through product research, paid ads, email automation, and Kla
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
         {cards.map((card, i) => (
           <div key={card.title}
-            className={`reveal stagger-${i + 1} bg-dark-card border border-dark-box rounded-2xl p-5 hover:border-primary-light transition-all duration-200`}>
+            className={`reveal stagger-${i + 1} glass rounded-2xl p-5 hover:border-primary-light transition-all duration-200`}>
             <div className="font-display font-bold text-base text-text-main mb-2">{card.title}</div>
             <div className="text-sm leading-relaxed text-text-muted">{card.text}</div>
           </div>
@@ -96,7 +96,7 @@ the right audience through product research, paid ads, email automation, and Kla
           },
         ].map((item, i) => (
           <div key={item.title}
-            className={`reveal stagger-${i + 1} bg-dark-card border border-dark-box rounded-2xl p-6 hover:border-primary-light transition-all duration-200`}>
+            className={`reveal stagger-${i + 1} glass rounded-2xl p-6 hover:border-primary-light transition-all duration-200`}>
             <h4 className="font-display font-bold text-lg text-text-main mb-2">{item.title}</h4>
             <p className="text-sm text-text-muted leading-relaxed">{item.text}</p>
           </div>
@@ -113,7 +113,7 @@ the right audience through product research, paid ads, email automation, and Kla
             const Icon = svc.icon
             return (
               <div key={svc.title}
-                className={`reveal stagger-${Math.min(i + 1, 8)} bg-dark-card border border-dark-box rounded-2xl p-5 hover:border-primary-light transition-all duration-200`}>
+                className={`reveal stagger-${Math.min(i + 1, 8)} glass rounded-2xl p-5 hover:border-primary-light transition-all duration-200`}>
                 <div className="text-2xl text-primary mb-3">
                   <Icon />
                 </div>

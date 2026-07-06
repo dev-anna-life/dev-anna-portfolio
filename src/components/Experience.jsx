@@ -47,7 +47,7 @@ export default function Experience() {
                 </div>
 
                 <div className={`rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1
-                  ${exp.current ? 'bg-dark-card border-primary' : 'bg-dark-card border-dark-box'}`}>
+                  ${exp.current ? 'glass border-primary' : 'glass border-dark-box'}`}>
 
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <div>

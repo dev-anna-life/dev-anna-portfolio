@@ -49,7 +49,7 @@ export default function Skills() {
           { name: 'Git & GitHub', text: 'Version control and collaboration.' },
         ].map((tech) => (
           <div key={tech.name}
-            className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group">
+            className="glass rounded-xl p-5 hover:border-primary-light transition-all duration-200 group">
             <h4 className="text-text-main font-semibold text-sm mb-1.5 group-hover:text-primary transition-colors">{tech.name}</h4>
             <p className="text-text-muted text-xs leading-relaxed">{tech.text}</p>
           </div>

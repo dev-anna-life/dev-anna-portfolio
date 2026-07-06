@@ -3,6 +3,7 @@ import amakaImg from '../assets/amaka-beauty.jpg'
 import multipreneurImg from '../assets/multi-preneur.jpg'
 import realtorImg from '../assets/mr-multipreneur-realtor.jpg'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import TiltCard from './TiltCard'
 
 const projects = [
   {
@@ -59,8 +60,9 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <div key={p.name}
-              className={`group bg-dark-card border border-dark-box rounded-2xl overflow-hidden hover:border-primary-light transition-all duration-200 reveal stagger-${i + 1}`}>
+            <TiltCard key={p.name}>
+            <div
+              className={`group glass rounded-2xl overflow-hidden reveal stagger-${i + 1}`}>
               <div className="relative overflow-hidden">
                 <img src={p.img} alt={`${p.name} project screenshot`} loading="lazy" width="400" height="288"
                   className="w-full h-52 object-cover object-top transition-all duration-500 group-hover:scale-105" />
@@ -85,6 +87,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
+            </TiltCard>
           ))}
         </div>
 

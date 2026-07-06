@@ -1,6 +1,7 @@
 import profileImg from '../assets/profile1.jpg'
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa'
 import { FaReact, FaNodeJs, FaDatabase, FaCss3Alt, FaJsSquare } from 'react-icons/fa'
+import MagneticButton from './MagneticButton'
 
 const codeBlock = `const developer = {
   name: "Annastesia Amarachi",
@@ -20,7 +21,7 @@ export default function Hero() {
       <div className="flex flex-col md:flex-row items-center justify-between w-full gap-12">
 
         <div className="flex-1 fade-in-up">
-          <div className="bg-dark-card border border-dark-box rounded-2xl p-6 mb-6 overflow-x-auto shadow-lg">
+          <div className="glass rounded-2xl p-6 mb-6 overflow-x-auto shadow-lg">
             <div className="flex items-center gap-1.5 mb-3">
               <span className="w-3 h-3 rounded-full bg-red-500" />
               <span className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -45,14 +46,14 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-5 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-light transition-all duration-200 shadow-btn-glow flex items-center gap-2 text-sm">
+            <MagneticButton as="button" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-5 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-light transition-all duration-200 shadow-btn-glow flex items-center gap-2 text-sm cursor-pointer">
               View Projects
-            </button>
-            <a href="/resume.pdf" download
-              className="px-5 py-3 border border-dark-box text-text-main font-medium rounded-md hover:border-primary-light transition-all duration-200 flex items-center gap-2 text-sm">
+            </MagneticButton>
+            <MagneticButton as="a" href="/resume.pdf" download
+              className="px-5 py-3 border border-dark-box text-text-main font-medium rounded-md hover:border-primary-light transition-all duration-200 flex items-center gap-2 text-sm cursor-pointer">
               Download CV
-            </a>
+            </MagneticButton>
             <div className="flex items-center gap-2">
               {[
                 { href: 'https://github.com/dev-anna-life', icon: <FaGithub /> },
