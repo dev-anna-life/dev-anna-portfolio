@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
-const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Testimonials', 'Contact']
+const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
 export default function Navbar() {
   const [active, setActive] = useState('Home')
