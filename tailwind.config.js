@@ -12,9 +12,9 @@ export default {
         'dark-card': '#f0eadf',
         'dark-box': '#e5dccc',
         'dark-nav': '#f5f0e8',
-        'text-main': '#1a472a',
-        'text-body': '#2d6a3f',
-        'text-muted': '#a8c5a0',
+        'text-main': '#1a1a1a',
+        'text-body': '#333333',
+        'text-muted': '#8a8a8a',
       },
       fontFamily: {
         sans: ['DM Sans', 'sans-serif'],

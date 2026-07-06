@@ -38,7 +38,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-3 mb-6 flex-wrap">
             {techIcons.map((Icon, i) => (
-              <div key={i} className="w-8 h-8 rounded-lg bg-dark-box border border-dark-box flex items-center justify-center text-primary-accent text-sm hover:border-primary-light transition-all duration-200">
+              <div key={i} className="w-8 h-8 rounded-lg bg-dark-box border border-dark-box flex items-center justify-center text-primary text-sm hover:border-primary transition-all duration-200">
                 <Icon />
               </div>
             ))}
@@ -60,7 +60,7 @@ export default function Hero() {
                 { href: 'mailto:annastesiaugwuanyi@gmail.com', icon: <FaEnvelope /> },
               ].map((social) => (
                 <a key={social.href} href={social.href} target="_blank" rel="noreferrer"
-                  className="w-9 h-9 rounded-full border border-dark-box flex items-center justify-center text-text-muted hover:border-primary-light hover:text-primary-accent transition-all duration-200 text-sm">
+                  className="w-9 h-9 rounded-full border border-dark-box flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-all duration-200 text-sm">
                   {social.icon}
                 </a>
               ))}

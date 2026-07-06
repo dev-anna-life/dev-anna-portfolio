@@ -24,12 +24,12 @@ export default function Skills() {
             key={skill.name}
             className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group"
           >
-            <p className="text-text-main font-medium mb-3 group-hover:text-primary-accent transition-colors">
+            <p className="text-text-main font-medium mb-3 group-hover:text-primary transition-colors">
               {skill.name}
             </p>
             <div className="w-full bg-dark-box rounded-full h-1.5 mb-1">
               <div
-                className="h-1.5 rounded-full bg-primary-accent progress-bar"
+                className="h-1.5 rounded-full bg-primary progress-bar"
                 style={{ '--progress': `${skill.level}%`, width: `${skill.level}%` }}
               />
             </div>
@@ -50,7 +50,7 @@ export default function Skills() {
         ].map((tech) => (
           <div key={tech.name}
             className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group">
-            <h4 className="text-text-main font-semibold text-sm mb-1.5 group-hover:text-primary-accent transition-colors">{tech.name}</h4>
+            <h4 className="text-text-main font-semibold text-sm mb-1.5 group-hover:text-primary transition-colors">{tech.name}</h4>
             <p className="text-text-muted text-xs leading-relaxed">{tech.text}</p>
           </div>
         ))}

@@ -52,7 +52,7 @@ export default function Projects() {
             </h2>
           </div>
           <a href="https://github.com/dev-anna-life" target="_blank" rel="noreferrer"
-            className="hidden md:inline-flex items-center gap-2 border border-primary text-primary-accent px-5 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-200">
+            className="hidden md:inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-200">
             <FaGithub /> View GitHub
           </a>
         </div>
@@ -69,7 +69,7 @@ export default function Projects() {
                 <h3 className="font-display font-bold text-lg text-text-main mb-2">{p.name}</h3>
                 <div className="flex gap-2 flex-wrap mb-3">
                   {p.tags.map(t => (
-                    <span key={t} className="text-xs font-semibold bg-primary/20 text-primary-accent px-3 py-1 rounded-full">{t}</span>
+                    <span key={t} className="text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full">{t}</span>
                   ))}
                 </div>
                 <p className="text-text-muted text-sm leading-relaxed mb-5">{p.desc}</p>
@@ -79,7 +79,7 @@ export default function Projects() {
                     <FaExternalLinkAlt className="text-xs" /> Live Demo
                   </a>
                   <a href={p.github} target="_blank" rel="noreferrer"
-                    className="flex items-center gap-2 border border-dark-box text-text-body px-4 py-2 rounded-lg text-sm font-semibold hover:border-primary hover:text-primary-accent transition-all duration-200">
+                    className="flex items-center gap-2 border border-dark-box text-text-body px-4 py-2 rounded-lg text-sm font-semibold hover:border-primary hover:text-primary transition-all duration-200">
                     <FaGithub /> GitHub
                   </a>
                 </div>

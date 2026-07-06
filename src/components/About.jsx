@@ -28,11 +28,11 @@ export default function About() {
         <div className="reveal-left">
           <p className="text-primary-accent text-xs font-bold uppercase tracking-widest mb-3">About Me</p>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-text-main leading-tight mb-6">
-            Developer & <br /><span className="text-primary-accent">Digital Marketer</span>
+            Developer & <br /><span className="text-primary">Digital Marketer</span>
           </h2>
           <p className="text-text-body leading-relaxed mb-4">
             I'm <strong className="text-text-main">Ugwuanyi Annastesia Amarachi</strong> - but the internet knows me as{' '}
-            <strong className="text-primary-accent">Dev Anna</strong>. I'm a full-stack developer and digital marketer who builds
+            <strong className="text-primary">Dev Anna</strong>. I'm a full-stack developer and digital marketer who builds
             high-performing web applications and drives growth through data-driven ad campaigns.
           </p>
           <p className="text-text-muted leading-relaxed">
@@ -115,7 +115,7 @@ export default function About() {
             return (
               <div key={svc.title}
                 className={`reveal stagger-${Math.min(i + 1, 8)} bg-dark-card border border-dark-box rounded-2xl p-5 hover:border-primary-light transition-all duration-200`}>
-                <div className="text-2xl text-primary-accent mb-3">
+                <div className="text-2xl text-primary mb-3">
                   <Icon />
                 </div>
                 <div className="font-display font-bold text-sm text-text-main mb-1">{svc.title}</div>
