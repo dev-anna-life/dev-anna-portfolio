@@ -11,7 +11,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="skills" className="py-20 px-8 md:px-16 max-w-6xl mx-auto">
       <p className="text-primary-accent text-sm font-medium uppercase tracking-widest mb-2">Skills</p>
       <h2 className="text-4xl font-display font-bold text-text-main mb-2">Technologies I work with</h2>
       <p className="text-text-body mb-12 max-w-lg">

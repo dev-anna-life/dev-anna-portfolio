@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -11,7 +11,6 @@ const socials = [
   { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://www.linkedin.com/in/annastesia-amarachi-ugwuanyi-3318a3390/' },
   { icon: FaTwitter, label: 'Twitter', href: 'https://x.com/Dev_Anna20/' },
   { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/devanna_22' },
-  { icon: FaFacebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php' },
   { icon: FaTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@itsanna136' },
 ]
 

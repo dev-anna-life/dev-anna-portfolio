@@ -1,11 +1,11 @@
 import profileImg from '../assets/profile1.jpg'
-import { FaSearch, FaEnvelopeOpenText, FaAd, FaGoogle, FaFacebook, FaCog, FaUsers, FaVideo } from 'react-icons/fa'
+import { FaSearch, FaEnvelopeOpenText, FaAd, FaGoogle, FaCog, FaUsers, FaVideo } from 'react-icons/fa'
 
 const cards = [
-  { title: 'Design-first', text: 'Beauty and usability always come together.' },
+  { title: 'Design First', text: 'Beauty and usability always come together.' },
   { title: 'Fast & Clean', text: 'Performant code without sacrificing looks.' },
   { title: 'Responsive', text: 'Every screen size gets the same love.' },
-  { title: 'Naija-built', text: 'World-class work, proudly from Nigeria.' },
+  { title: 'Naija Built', text: 'World-class work, proudly from Nigeria.' },
 ]
 
 const marketingServices = [
@@ -13,7 +13,6 @@ const marketingServices = [
   { icon: FaEnvelopeOpenText, title: 'Email Automation', text: 'Automated email sequences for campaigns, nurture flows, and conversions.' },
   { icon: FaAd, title: 'Product Ads', text: 'High-converting product ad campaigns across multiple platforms.' },
   { icon: FaGoogle, title: 'Google Ads', text: 'Search, display, and shopping ad campaigns optimized for ROI.' },
-  { icon: FaFacebook, title: 'Facebook Ads', text: 'Targeted social ad campaigns with creative strategy and audience segmentation.' },
   { icon: FaCog, title: 'Klaviyo Setup', text: 'Full Klaviyo configuration — flows, segments, integrations, and templates.' },
   { icon: FaUsers, title: 'Leads & List Building', text: 'Grow and segment high-quality email and SMS lists.' },
   { icon: FaVideo, title: 'Product Video', text: 'Engaging product videos and creative assets for ads and social media.' },
@@ -31,7 +30,7 @@ export default function About() {
             Developer & <br /><span className="text-primary">Digital Marketer</span>
           </h2>
           <p className="text-text-body leading-relaxed mb-4">
-            I'm <strong className="text-text-main">Ugwuanyi Annastesia Amarachi</strong> - but the internet knows me as{' '}
+            I'm <strong className="text-text-main">Ugwuanyi Annastesia Amarachi</strong> but the internet knows me as{' '}
             <strong className="text-primary">Dev Anna</strong>. I'm a full-stack developer and digital marketer who builds
             high-performing web applications and drives growth through data-driven ad campaigns.
           </p>
@@ -62,7 +61,7 @@ export default function About() {
               </div>
             </div>
             <div className="absolute -top-3 -right-4 bg-dark-card border border-dark-box rounded-xl px-3 py-2 shadow-md animate-float z-20" style={{ animationDelay: '0.8s' }}>
-              <span className="text-xs font-semibold text-text-body">Full-Stack Dev</span>
+              <span className="text-xs font-semibold text-text-body">Full Stack Dev</span>
             </div>
             <div className="absolute -bottom-6 -left-4 bg-primary text-white rounded-xl px-3 py-2 shadow-md animate-float z-20" style={{ animationDelay: '1.2s' }}>
               <span className="text-xs font-semibold">Digital Marketer</span>

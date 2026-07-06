@@ -9,14 +9,14 @@ const codeBlock = `const developer = {
   location: "Nigeria",
   skills: ["React", "Node.js", "MongoDB", "Tailwind CSS", "JavaScript"],
   status: "Available for work",
-  passion: "Building high-performance web apps"
+  passion: "Building high performance web apps"
 }`
 
 const techIcons = [FaReact, FaNodeJs, FaJsSquare, FaDatabase, FaCss3Alt]
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-20 px-6 max-w-6xl mx-auto">
+    <section id="hero" className="min-h-screen flex items-center pt-20 px-8 md:px-16 max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between w-full gap-12">
 
         <div className="flex-1 fade-in-up">
@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-primary opacity-20 blur-3xl animate-pulse" />
             <div className="absolute inset-0 bg-primary/10 animate-morph" style={{ borderRadius: '60% 40% 55% 45% / 50% 55% 45% 50%' }} />
             <div className="absolute inset-3 bg-primary/10 animate-morph" style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 55% 45%', animationDelay: '1.5s' }} />
-            <img src={profileImg} alt="Annastesia - Fullstack Developer"
+            <img src={profileImg} alt="Annastesia Fullstack Developer"
               className="w-full h-full object-cover object-top rounded-full photo-glow relative z-10" />
           </div>
         </div>
