@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import logo from '../assets/Logo.jpeg'
 
 const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 
@@ -17,8 +18,8 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-dark-nav border-b border-dark-box">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button onClick={() => scrollTo('hero')} className="text-xl font-display font-bold text-text-main">
-          <span className="text-primary">D</span>ev Anna
+        <button onClick={() => scrollTo('hero')} className="flex items-center gap-2">
+          <img src={logo} alt="Dev Anna" className="h-9 w-auto rounded" />
         </button>
 
         <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-text-main text-xl p-1" aria-label="Toggle menu">
