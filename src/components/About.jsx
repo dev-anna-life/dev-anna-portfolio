@@ -1,5 +1,5 @@
 import profileImg from '../assets/profile1.jpg'
-import { FaSearch, FaEnvelopeOpenText, FaAd, FaGoogle, FaCog, FaUsers, FaVideo } from 'react-icons/fa'
+import { FaSearch, FaEnvelopeOpenText, FaAd, FaGoogle, FaCog, FaUsers, FaVideo, FaShoppingBag, FaStore } from 'react-icons/fa'
 
 const cards = [
   { title: 'Design First', text: 'Beauty and usability always come together.' },
@@ -16,6 +16,8 @@ const marketingServices = [
   { icon: FaCog, title: 'Klaviyo Setup', text: 'Full Klaviyo configuration: flows, segments, integrations, and templates.' },
   { icon: FaUsers, title: 'Leads & List Building', text: 'Grow and segment high quality email and SMS lists.' },
   { icon: FaVideo, title: 'Product Video', text: 'Engaging product videos and creative assets for ads and social media.' },
+  { icon: FaShoppingBag, title: 'Shopify Setup', text: 'Full Shopify store setup: themes, collections, product pages, and payment integration.' },
+  { icon: FaStore, title: 'Etsy Setup', text: 'Complete Etsy shop optimization: listings, SEO, branding and store policies.' },
 ]
 
 export default function About() {
