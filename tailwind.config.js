@@ -4,15 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        forest:  '#1a472a',   // deep forest green — main bg, hero
-        cream:   '#f5f0e8',   // warm cream — accents, buttons, text on dark
-        sage:    '#a8c5a0',   // muted sage — subtext, secondary elements
-        canopy:  '#2d6a3f',   // medium green — section bg variant
-        bark:    '#0d2b1a',   // darkest green — footer, deep contrast
+        primary: '#1e4d28',
+        'primary-light': '#2d7a3a',
+        'primary-lighter': '#3a9e4a',
+        'primary-accent': '#4db860',
+        'dark-bg': '#0a0a0a',
+        'dark-card': '#111111',
+        'dark-box': '#1a1a1a',
+        'dark-nav': '#0d0d0d',
+        'text-main': '#ffffff',
+        'text-body': '#cccccc',
+        'text-muted': '#888888',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans:    ['"DM Sans"', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+      },
+      boxShadow: {
+        glow: '0 0 40px rgba(30, 77, 40, 0.6)',
+        'btn-glow': '0 4px 20px rgba(30, 77, 40, 0.4)',
       },
     },
   },

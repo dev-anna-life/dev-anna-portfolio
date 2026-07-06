@@ -1,65 +1,59 @@
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase } from 'react-icons/fa'
-import { SiTailwindcss, SiExpress, SiMongodb } from 'react-icons/si'
-
 const skills = [
-  { name: 'HTML5',             icon: FaHtml5,       color: '#E34F26', desc: 'Semantic, accessible markup for modern web applications.' },
-  { name: 'CSS3',              icon: FaCss3Alt,     color: '#1572B6', desc: 'Responsive layouts, animations, and polished visual design.' },
-  { name: 'JavaScript',        icon: FaJs,          color: '#F7DF1E', desc: 'Core language powering interactive web experiences.' },
-  { name: 'React',             icon: FaReact,       color: '#61DAFB', desc: 'Component-based library for building fast, scalable UIs.' },
-  { name: 'Node.js',           icon: FaNodeJs,      color: '#339933', desc: 'Server-side JavaScript runtime for building scalable backends.' },
-  { name: 'Express.js',        icon: SiExpress,     color: '#f5f0e8', desc: 'Fast, minimalist web framework for Node.js REST APIs.' },
-  { name: 'MongoDB',           icon: SiMongodb,     color: '#47A248', desc: 'NoSQL database for flexible, scalable data storage.' },
-  { name: 'REST APIs',         icon: FaDatabase,    color: '#a8c5a0', desc: 'Design and integration of robust RESTful API services.' },
-  { name: 'Tailwind CSS',      icon: SiTailwindcss, color: '#38BDF8', desc: 'Utility-first CSS for rapid, consistent styling.' },
-  { name: 'Git & GitHub',      icon: FaGitAlt,      color: '#F05032', desc: 'Version control, collaboration, and CI/CD workflows.' },
+  { name: 'React', level: 90 },
+  { name: 'Next.js', level: 85 },
+  { name: 'Node.js', level: 80 },
+  { name: 'Tailwind CSS', level: 95 },
+  { name: 'MongoDB', level: 75 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'TypeScript', level: 70 },
+  { name: 'Git', level: 85 },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-8 md:px-16 bg-forest">
-      <div className="max-w-5xl mx-auto">
+    <section id="skills" className="py-20 px-6 max-w-6xl mx-auto">
+      <p className="text-primary-accent text-sm font-medium uppercase tracking-widest mb-2">Skills</p>
+      <h2 className="text-4xl font-display font-bold text-text-main mb-2">Technologies I work with</h2>
+      <p className="text-text-body mb-12 max-w-lg">
+        I use modern technologies to build scalable and efficient web applications.
+      </p>
 
-        <div className="reveal mb-16">
-          <p className="text-sage text-xs font-bold uppercase tracking-widest mb-3">Skills</p>
-          <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">
-            Tools I bring to every project
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 reveal">
-          {[['4+', 'Years Experience'], ['4', 'Projects Deployed'], ['10', 'Technologies'], ['100%', 'Dedication']].map(([num, label]) => (
-            <div key={label} className="border border-cream/20 rounded-2xl p-5 text-center hover:border-sage transition-all duration-300">
-              <div className="font-display font-black text-3xl text-cream mb-1">{num}</div>
-              <div className="text-xs mt-2 text-cream/50 font-medium">{label}</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {skills.map((skill) => (
+          <div
+            key={skill.name}
+            className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group"
+          >
+            <p className="text-text-main font-medium mb-3 group-hover:text-primary-accent transition-colors">
+              {skill.name}
+            </p>
+            <div className="w-full bg-dark-box rounded-full h-1.5 mb-1">
+              <div
+                className="h-1.5 rounded-full bg-primary-accent progress-bar"
+                style={{ '--progress': `${skill.level}%`, width: `${skill.level}%` }}
+              />
             </div>
-          ))}
-        </div>
+            <p className="text-primary-accent text-xs">{skill.level}%</p>
+          </div>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {skills.map((skill, i) => {
-            const Icon = skill.icon
-            return (
-              <div key={skill.name}
-                className={`group relative border border-cream/10 p-6 overflow-hidden rounded-xl reveal stagger-${i + 1} hover:-translate-y-1 transition-all duration-300`}>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-xl"
-                  style={{ background: skill.color }} />
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl"
-                  style={{ boxShadow: `inset 0 0 0 1px ${skill.color}` }} />
-                <div className="text-5xl mb-4 transition-transform duration-300 group-hover:scale-110 relative z-10"
-                  style={{ color: skill.color }}>
-                  <Icon />
-                </div>
-                <h3 className="font-display font-bold text-base mb-2 relative z-10" style={{ color: skill.color }}>
-                  {skill.name}
-                </h3>
-                <p className="text-cream/60 text-xs leading-relaxed relative z-10 hidden md:block">
-                  {skill.desc}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-
+      <h3 className="font-display font-semibold text-xl text-text-main mb-6">Technologies I use</h3>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          { name: 'HTML5', text: 'Semantic and accessible markup.' },
+          { name: 'CSS3', text: 'Responsive layouts and animations.' },
+          { name: 'JavaScript', text: 'Interactive and dynamic applications.' },
+          { name: 'Tailwind CSS', text: 'Utility-first responsive design.' },
+          { name: 'React', text: 'Building reusable UI components.' },
+          { name: 'Git & GitHub', text: 'Version control and collaboration.' },
+        ].map((tech) => (
+          <div key={tech.name}
+            className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group">
+            <h4 className="text-text-main font-semibold text-sm mb-1.5 group-hover:text-primary-accent transition-colors">{tech.name}</h4>
+            <p className="text-text-muted text-xs leading-relaxed">{tech.text}</p>
+          </div>
+        ))}
       </div>
     </section>
   )
