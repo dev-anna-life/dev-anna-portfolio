@@ -44,16 +44,16 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-light transition-all duration-200 shadow-btn-glow flex items-center gap-2">
+              className="px-5 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-light transition-all duration-200 shadow-btn-glow flex items-center gap-2 text-sm">
               View Projects
             </button>
             <a href="/resume.pdf" download
-              className="px-6 py-3 border border-dark-box text-text-main font-medium rounded-md hover:border-primary-light transition-all duration-200 flex items-center gap-2">
+              className="px-5 py-3 border border-dark-box text-text-main font-medium rounded-md hover:border-primary-light transition-all duration-200 flex items-center gap-2 text-sm">
               Download CV
             </a>
-            <div className="flex items-center gap-2 ml-2">
+            <div className="flex items-center gap-2">
               {[
                 { href: 'https://github.com/dev-anna-life', icon: <FaGithub /> },
                 { href: 'https://www.linkedin.com/in/annastesia-amarachi-ugwuanyi-3318a3390/', icon: <FaLinkedinIn /> },
@@ -69,7 +69,7 @@ export default function Hero() {
         </div>
 
         <div className="flex-1 flex justify-center">
-          <div className="relative w-72 h-72 md:w-80 md:h-80">
+          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 max-w-full">
             <div className="absolute inset-0 bg-primary opacity-20 blur-3xl animate-pulse" />
             <div className="absolute inset-0 bg-primary/10 animate-morph" style={{ borderRadius: '60% 40% 55% 45% / 50% 55% 45% 50%' }} />
             <div className="absolute inset-3 bg-primary/10 animate-morph" style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 55% 45%', animationDelay: '1.5s' }} />

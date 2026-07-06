@@ -5,7 +5,7 @@ const experiences = [
     period: '2024 to Present',
     location: 'Nigeria',
     type: 'Remote',
-    desc: 'Building and delivering full-stack web applications for clients across e-commerce, beauty brands, business landing pages & more. End to end development from database design to deployment.',
+    desc: 'Building and delivering full stack web applications for clients across ecommerce, beauty brands, business landing pages & more. End to end development from database design to deployment.',
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Vercel'],
     current: true,
   },
@@ -15,7 +15,7 @@ const experiences = [
     period: '2023 to 2024',
     location: 'Nsukka, Nigeria',
     type: 'On site',
-    desc: 'Completed an intensive frontend development program at Nanocodes, Nsukka. Built real-world projects covering HTML, CSS, JavaScript and modern frameworks. Laid the foundation for my full-stack journey.',
+    desc: 'Completed an intensive frontend development program at Nanocodes, Nsukka. Built real world projects covering HTML, CSS, JavaScript and modern frameworks. Laid the foundation for my full stack journey.',
     stack: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Tailwind CSS', 'Responsive Design'],
     current: false,
   },
@@ -39,7 +39,7 @@ export default function Experience() {
           <div className="flex flex-col gap-12">
             {experiences.map((exp, i) => (
               <div key={exp.role}
-                className={`relative pl-16 md:pl-24 ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} stagger-${i + 1}`}>
+                className={`relative pl-12 md:pl-24 ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'} stagger-${i + 1}`}>
 
                 <div className={`absolute left-4 md:left-6 top-1 w-5 h-5 rounded-full border-2 flex items-center justify-center
                   ${exp.current ? 'bg-primary border-primary' : 'bg-dark-bg border-dark-box'}`}>

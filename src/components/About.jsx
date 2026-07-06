@@ -5,7 +5,7 @@ const cards = [
   { title: 'Design First', text: 'Beauty and usability always come together.' },
   { title: 'Fast & Clean', text: 'Performant code without sacrificing looks.' },
   { title: 'Responsive', text: 'Every screen size gets the same love.' },
-  { title: 'Naija Built', text: 'World-class work, proudly from Nigeria.' },
+  { title: 'Naija Built', text: 'World class work, proudly from Nigeria.' },
 ]
 
 const marketingServices = [
@@ -13,8 +13,8 @@ const marketingServices = [
   { icon: FaEnvelopeOpenText, title: 'Email Automation', text: 'Automated email sequences for campaigns, nurture flows, and conversions.' },
   { icon: FaAd, title: 'Product Ads', text: 'High-converting product ad campaigns across multiple platforms.' },
   { icon: FaGoogle, title: 'Google Ads', text: 'Search, display, and shopping ad campaigns optimized for ROI.' },
-  { icon: FaCog, title: 'Klaviyo Setup', text: 'Full Klaviyo configuration — flows, segments, integrations, and templates.' },
-  { icon: FaUsers, title: 'Leads & List Building', text: 'Grow and segment high-quality email and SMS lists.' },
+  { icon: FaCog, title: 'Klaviyo Setup', text: 'Full Klaviyo configuration: flows, segments, integrations, and templates.' },
+  { icon: FaUsers, title: 'Leads & List Building', text: 'Grow and segment high quality email and SMS lists.' },
   { icon: FaVideo, title: 'Product Video', text: 'Engaging product videos and creative assets for ads and social media.' },
 ]
 
@@ -31,13 +31,13 @@ export default function About() {
           </h2>
           <p className="text-text-body leading-relaxed mb-4">
             I'm <strong className="text-text-main">Ugwuanyi Annastesia Amarachi</strong> but the internet knows me as{' '}
-            <strong className="text-primary">Dev Anna</strong>. I'm a full-stack developer and digital marketer who builds
-            high-performing web applications and drives growth through data-driven ad campaigns.
+<strong className="text-primary">Dev Anna</strong>. I'm a full stack developer and digital marketer who builds
+high performing web applications and drives growth through data driven ad campaigns.
           </p>
           <p className="text-text-muted leading-relaxed">
             With 4+ years across the MERN stack and digital marketing, I bridge the gap between
-            development and conversion. I don't just build beautiful apps — I make sure they reach
-            the right audience through product research, paid ads, email automation, and Klaviyo-powered campaigns.
+development and conversion. I don't just build beautiful apps, I make sure they reach
+the right audience through product research, paid ads, email automation, and Klaviyo powered campaigns.
           </p>
           <div className="flex gap-10 mt-8">
             {[['4', 'Projects deployed'], ['8', 'Marketing services'], ['∞', 'Passion for growth']].map(([num, label]) => (
@@ -50,7 +50,7 @@ export default function About() {
         </div>
 
         <div className="flex justify-center items-center reveal-right">
-          <div className="relative w-72 h-80 flex items-center justify-center">
+          <div className="relative w-64 h-72 sm:w-72 sm:h-80 flex items-center justify-center max-w-full">
             <div className="absolute inset-0 bg-primary/20 animate-morph" style={{ borderRadius: '60% 40% 55% 45% / 50% 55% 45% 50%' }} />
             <div className="absolute inset-3 bg-primary/10 animate-morph" style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 55% 45%', animationDelay: '1.5s' }} />
             <div className="relative z-10 animate-float">
@@ -84,7 +84,7 @@ export default function About() {
         {[
           {
             title: 'Web Development',
-            text: 'I build fast, responsive and modern web applications using React, Next.js, Node.js and Tailwind CSS — always focusing on clean code and great user experience.',
+            text: 'I build fast, responsive and modern web applications using React, Next.js, Node.js and Tailwind CSS, always focusing on clean code and great user experience.',
           },
           {
             title: 'Passion',
@@ -92,7 +92,7 @@ export default function About() {
           },
           {
             title: 'Mission',
-            text: 'To create digital experiences that are clean, accessible, visually appealing and enjoyable to use — bridging the gap between design and conversion.',
+            text: 'To create digital experiences that are clean, accessible, visually appealing and enjoyable to use, bridging the gap between design and conversion.',
           },
         ].map((item, i) => (
           <div key={item.title}

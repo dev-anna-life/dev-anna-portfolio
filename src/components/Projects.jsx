@@ -9,7 +9,7 @@ const projects = [
     img: fashionImg,
     name: 'Fashion Store',
     tags: ['React', 'Tailwind'],
-    desc: 'A vibrant e-commerce fashion interface with product listings, cart functionality & smooth animations.',
+    desc: 'A vibrant ecommerce fashion interface with product listings, cart functionality & smooth animations.',
     link: 'https://fashion-store-six-ivory.vercel.app/',
     github: 'https://github.com/dev-anna-life/Fashion-Store',
   },
