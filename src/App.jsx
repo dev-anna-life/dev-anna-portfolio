@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState, useEffect } from 'react'
 import { useReveal } from './hooks/useReveal'
 import useSmoothScroll from './hooks/useSmoothScroll'
 import Navbar from './components/Navbar'
@@ -17,11 +17,26 @@ export default function Home() {
   useReveal()
   useSmoothScroll()
 
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <main className="bg-dark-bg text-text-body font-sans min-h-screen">
+    <main className="bg-dark-bg text-text-body font-sans min-h-screen transition-colors duration-300">
       <BackgroundEffects />
       <PageTransition />
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
       <About />
       <Skills />

@@ -1,3 +1,5 @@
+import storeliftImg from '../assets/storelift-agency.png'
+import cassmoImg from '../assets/cassmo-homes.png'
 import fashionImg from '../assets/fashion-store.jpg'
 import amakaImg from '../assets/amaka-beauty.jpg'
 import multipreneurImg from '../assets/multi-preneur.jpg'
@@ -6,6 +8,24 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import TiltCard from './TiltCard'
 
 const projects = [
+  {
+    img: storeliftImg,
+    name: 'StoreLift Agency',
+    tags: ['React', 'SaaS', 'Tailwind', 'E-Commerce'],
+    desc: 'Flagship e-commerce growth & store optimization agency platform for Shopify & Etsy merchants with interactive pricing & Web3Forms integration.',
+    link: 'https://storelift.vercel.app/',
+    github: 'https://github.com/dev-anna-life/storelift',
+    featured: true
+  },
+  {
+    img: cassmoImg,
+    name: 'Cassmo Homes',
+    tags: ['React', 'Tailwind', 'Real Estate'],
+    desc: 'A premium real estate website showcase featuring luxury properties, interactive property tours & modern architectural branding.',
+    link: 'https://cassmo-homes.vercel.app/',
+    github: 'https://github.com/dev-anna-life/cassmo-homes',
+    featured: true
+  },
   {
     img: fashionImg,
     name: 'Fashion Store',
@@ -43,7 +63,7 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="py-24 px-8 md:px-16">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         <div className="reveal flex justify-between items-end mb-16">
           <div>
@@ -58,35 +78,44 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p, i) => (
             <TiltCard key={p.name}>
-            <div
-              className={`group glass rounded-2xl overflow-hidden reveal stagger-${i + 1}`}>
-              <div className="relative overflow-hidden">
-                <img src={p.img} alt={`${p.name} project screenshot`} loading="lazy" width="400" height="288"
-                  className="w-full h-52 object-cover object-top transition-all duration-500 group-hover:scale-105" />
-              </div>
-              <div className="p-5">
-                <h3 className="font-display font-bold text-lg text-text-main mb-2">{p.name}</h3>
-                <div className="flex gap-2 flex-wrap mb-3">
-                  {p.tags.map(t => (
-                    <span key={t} className="text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full">{t}</span>
-                  ))}
+              <div
+                className={`group glass rounded-2xl overflow-hidden reveal stagger-${(i % 4) + 1} h-full flex flex-col justify-between relative`}>
+                {p.featured && (
+                  <span className="absolute top-3 right-3 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg">
+                    Featured
+                  </span>
+                )}
+                <div>
+                  <div className="relative overflow-hidden">
+                    <img src={p.img} alt={`${p.name} project screenshot`} loading="lazy" width="400" height="288"
+                      className="w-full h-52 object-cover object-top transition-all duration-500 group-hover:scale-105" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-display font-bold text-lg text-text-main mb-2">{p.name}</h3>
+                    <div className="flex gap-2 flex-wrap mb-3">
+                      {p.tags.map(t => (
+                        <span key={t} className="text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full">{t}</span>
+                      ))}
+                    </div>
+                    <p className="text-text-muted text-sm leading-relaxed mb-5">{p.desc}</p>
+                  </div>
                 </div>
-                <p className="text-text-muted text-sm leading-relaxed mb-5">{p.desc}</p>
-                <div className="flex gap-3">
+
+                <div className="p-5 pt-0 flex gap-3">
                   <a href={p.link} target="_blank" rel="noreferrer"
-                    className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors duration-200">
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors duration-200">
                     <FaExternalLinkAlt className="text-xs" /> Live Demo
                   </a>
                   <a href={p.github} target="_blank" rel="noreferrer"
-                    className="flex items-center gap-2 border border-dark-box text-text-body px-4 py-2 rounded-lg text-sm font-semibold hover:border-primary hover:text-primary transition-all duration-200">
-                    <FaGithub /> GitHub
+                    className="flex items-center justify-center gap-2 border border-dark-box text-text-body px-4 py-2.5 rounded-lg text-sm font-semibold hover:border-primary hover:text-primary transition-all duration-200">
+                    <FaGithub />
                   </a>
                 </div>
+
               </div>
-            </div>
             </TiltCard>
           ))}
         </div>

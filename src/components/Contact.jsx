@@ -1,10 +1,5 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
-
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const socials = [
   { icon: FaGithub, label: 'GitHub', href: 'https://github.com/dev-anna-life' },
@@ -26,7 +21,7 @@ export default function Contact() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email'
     if (!form.subject.trim()) e.subject = 'Subject is required'
     if (!form.message.trim()) e.message = 'Message is required'
-    else if (form.message.trim().length < 20) e.message = 'Message must be at least 20 characters'
+    else if (form.message.trim().length < 10) e.message = 'Message must be at least 10 characters'
     return e
   }
 
@@ -41,15 +36,33 @@ export default function Contact() {
     const newErrors = validate()
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return }
     setStatus('loading')
+
     try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-        from_name: form.name, from_email: form.email,
-        subject: form.subject, message: form.message,
-      }, EMAILJS_PUBLIC_KEY)
-      setStatus('success')
-      setForm({ name: '', email: '', subject: '', message: '' })
-      setErrors({})
-      setTimeout(() => setStatus('idle'), 6000)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "02be8f7f-5ff1-41c2-a355-fb91d8f4acd1",
+          name: form.name,
+          email: form.email,
+          subject: `[Dev Anna Portfolio] ${form.subject}`,
+          message: form.message
+        })
+      })
+
+      const result = await response.json()
+      if (result.success || response.status === 200) {
+        setStatus('success')
+        setForm({ name: '', email: '', subject: '', message: '' })
+        setErrors({})
+        setTimeout(() => setStatus('idle'), 6000)
+      } else {
+        setStatus('error')
+        setTimeout(() => setStatus('idle'), 5000)
+      }
     } catch (err) {
       console.error(err)
       setStatus('error')
@@ -83,19 +96,19 @@ export default function Contact() {
             <div className="reveal-left glass rounded-3xl p-7">
               <h3 className="font-display font-bold text-xl text-text-main mb-6">Get In Touch</h3>
               <div className="space-y-5">
-                <a href="https://mail.google.com/mail/?view=cm&to=annastesiaugwuanyi@gmail.com"
+                <a href="mailto:annastesiaugwuanyi@gmail.com"
                   className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200 shrink-0">
                     <FaEnvelope />
                   </div>
-                  <div>
+                  <div className="overflow-hidden">
                     <div className="text-xs text-text-muted font-semibold uppercase tracking-wide mb-0.5">Email</div>
-                    <div className="text-sm font-semibold text-text-body">annastesiaugwuanyi@gmail.com</div>
+                    <div className="text-sm font-semibold text-text-body truncate">annastesiaugwuanyi@gmail.com</div>
                   </div>
                 </a>
                 <a href="https://wa.me/2348146790636" target="_blank" rel="noreferrer"
                   className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                  <div className="w-10 h-10 rounded-full bg-dark-box flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200 shrink-0">
                     <FaWhatsapp />
                   </div>
                   <div>
@@ -104,7 +117,7 @@ export default function Contact() {
                   </div>
                 </a>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary shrink-0">
                     <FaGithub />
                   </div>
                   <div>
@@ -113,7 +126,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary">
+                  <div className="w-10 h-10 rounded-full bg-dark-bg/70 flex items-center justify-center text-primary shrink-0">
                     <FaLinkedinIn />
                   </div>
                   <div>
@@ -137,46 +150,46 @@ export default function Contact() {
 
             <div className="reveal-right glass rounded-3xl p-7">
 
-          {status === 'success' && (
-            <div className="bg-primary/20 border border-primary text-primary-accent rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">
-              Message sent! I'll get back to you soon.
-            </div>
-          )}
-          {status === 'error' && (
-            <div className="bg-red-900/20 border border-red-500 text-red-400 rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">
-              Something went wrong. Please try again or email me directly.
-            </div>
-          )}
+              {status === 'success' && (
+                <div className="bg-primary/20 border border-primary text-primary rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">
+                  Message sent successfully! I will get back to you soon.
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="bg-red-900/20 border border-red-500 text-red-400 rounded-2xl px-6 py-4 text-sm font-semibold text-center mb-6">
+                  Something went wrong. Please email me directly at annastesiaugwuanyi@gmail.com.
+                </div>
+              )}
 
-          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Name</label>
-                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Full Name" className={inputCls('name')} />
-                {errors.name && <span className="text-red-400 text-xs">{errors.name}</span>}
-              </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Email</label>
-                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className={inputCls('email')} />
-                {errors.email && <span className="text-red-400 text-xs">{errors.email}</span>}
-              </div>
+              <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Name *</label>
+                    <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Full Name" className={inputCls('name')} />
+                    {errors.name && <span className="text-red-400 text-xs">{errors.name}</span>}
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Email *</label>
+                    <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="your@email.com" className={inputCls('email')} />
+                    {errors.email && <span className="text-red-400 text-xs">{errors.email}</span>}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Subject *</label>
+                  <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="What's this about?" className={inputCls('subject')} />
+                  {errors.subject && <span className="text-red-400 text-xs">{errors.subject}</span>}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Message *</label>
+                  <textarea rows={5} name="message" value={form.message} onChange={handleChange} placeholder="Tell me about your project or idea..." className={`${inputCls('message')} resize-none`} />
+                  {errors.message && <span className="text-red-400 text-xs">{errors.message}</span>}
+                </div>
+                <button type="submit" disabled={status === 'loading'}
+                  className="bg-primary text-white py-3.5 rounded-xl font-display font-bold text-base hover:bg-primary-light transition-colors duration-200 mt-1 w-full disabled:opacity-60">
+                  {status === 'loading' ? 'Sending Message...' : 'Send Message →'}
+                </button>
+              </form>
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Subject</label>
-              <input type="text" name="subject" value={form.subject} onChange={handleChange} placeholder="What's this about?" className={inputCls('subject')} />
-              {errors.subject && <span className="text-red-400 text-xs">{errors.subject}</span>}
-            </div>
-            <div className="flex flex-col gap-2">
-              <label className="text-xs font-semibold text-text-muted uppercase tracking-wide">Message</label>
-              <textarea rows={6} name="message" value={form.message} onChange={handleChange} placeholder="Tell me about your project or idea..." className={`${inputCls('message')} resize-none`} />
-              {errors.message && <span className="text-red-400 text-xs">{errors.message}</span>}
-            </div>
-            <button type="submit" disabled={status === 'loading'}
-              className="bg-primary text-white py-4 rounded-xl font-display font-bold text-base hover:bg-primary-light transition-colors duration-200 mt-1 w-full disabled:opacity-60">
-              {status === 'loading' ? 'Sending...' : 'Send Message →'}
-            </button>
-          </form>
-          </div>
           </div>
 
         </div>
