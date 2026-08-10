@@ -1,4 +1,3 @@
-import storeliftImg from '../assets/storelift-agency.png'
 import cassmoImg from '../assets/cassmo-homes.png'
 import fashionImg from '../assets/fashion-store.jpg'
 import amakaImg from '../assets/amaka-beauty.jpg'
@@ -8,15 +7,6 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import TiltCard from './TiltCard'
 
 const projects = [
-  {
-    img: storeliftImg,
-    name: 'StoreLift Agency',
-    tags: ['React', 'SaaS', 'Tailwind', 'E-Commerce'],
-    desc: 'Flagship e-commerce growth & store optimization agency platform for Shopify & Etsy merchants with interactive pricing & Web3Forms integration.',
-    link: 'https://storelift.vercel.app/',
-    github: 'https://github.com/dev-anna-life/storelift',
-    featured: true
-  },
   {
     img: cassmoImg,
     name: 'Cassmo Homes',
