@@ -1,59 +1,63 @@
 const skills = [
-  { name: 'React', level: 90 },
-  { name: 'Next.js', level: 85 },
-  { name: 'Node.js', level: 80 },
+  { name: 'React & Next.js', level: 92 },
+  { name: 'Node.js & Express', level: 88 },
+  { name: 'PostgreSQL & Prisma', level: 85 },
   { name: 'Tailwind CSS', level: 95 },
-  { name: 'MongoDB', level: 75 },
-  { name: 'JavaScript', level: 90 },
-  { name: 'TypeScript', level: 70 },
-  { name: 'Git', level: 85 },
+  { name: 'RESTful APIs', level: 90 },
+  { name: 'React Native', level: 80 },
+  { name: 'JavaScript / ES6+', level: 92 },
+  { name: 'Git & Deployment', level: 85 },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-8 md:px-16 max-w-6xl mx-auto">
-      <p className="text-primary-accent text-sm font-medium uppercase tracking-widest mb-2">Skills</p>
-      <h2 className="text-4xl font-display font-bold text-text-main mb-2">Technologies I work with</h2>
-      <p className="text-text-body mb-12 max-w-lg">
-        I use modern technologies to build scalable and efficient web applications.
-      </p>
+    <section id="skills" className="relative bg-forest-deep text-cream py-20 px-8 md:px-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="reveal">
+          <p className="text-brand-green text-xs font-semibold uppercase tracking-[0.22em] mb-2">Technical Proficiency</p>
+          <h2 className="text-3xl sm:text-4xl font-display font-semibold text-cream mb-3">Technologies I work with</h2>
+          <p className="text-cream/75 mb-12 max-w-lg text-sm sm:text-base leading-relaxed">
+            Modern full-stack technologies I leverage to build scalable, high-performance web and mobile products.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className="bg-dark-card border border-dark-box rounded-xl p-5 hover:border-primary-light transition-all duration-200 group"
-          >
-            <p className="text-text-main font-medium mb-3 group-hover:text-primary transition-colors">
-              {skill.name}
-            </p>
-            <div className="w-full bg-dark-box rounded-full h-1.5 mb-1">
-              <div
-                className="h-1.5 rounded-full bg-primary progress-bar"
-                style={{ '--progress': `${skill.level}%`, width: `${skill.level}%` }}
-              />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+          {skills.map((skill, i) => (
+            <div
+              key={skill.name}
+              className={`glass rounded-xl p-5 border border-cream/15 hover:border-brand-green shadow-sm transition-all duration-200 group reveal stagger-${(i % 4) + 1}`}
+            >
+              <p className="text-cream font-medium text-sm mb-3 group-hover:text-brand-green transition-colors">
+                {skill.name}
+              </p>
+              <div className="w-full bg-forest border border-cream/15 rounded-full h-2 mb-2 overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-brand-green to-brand-greenLight progress-bar"
+                  style={{ '--progress': `${skill.level}%`, width: `${skill.level}%` }}
+                />
+              </div>
+              <p className="text-brand-green font-semibold text-xs">{skill.level}%</p>
             </div>
-            <p className="text-primary-accent text-xs">{skill.level}%</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <h3 className="font-display font-semibold text-xl text-text-main mb-6">Technologies I use</h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {[
-          { name: 'HTML5', text: 'Semantic and accessible markup.' },
-          { name: 'CSS3', text: 'Responsive layouts and animations.' },
-          { name: 'JavaScript', text: 'Interactive and dynamic applications.' },
-          { name: 'Tailwind CSS', text: 'Utility-first responsive design.' },
-          { name: 'React', text: 'Building reusable UI components.' },
-          { name: 'Git & GitHub', text: 'Version control and collaboration.' },
-        ].map((tech) => (
-          <div key={tech.name}
-            className="glass rounded-xl p-5 hover:border-primary-light transition-all duration-200 group">
-            <h4 className="text-text-main font-semibold text-sm mb-1.5 group-hover:text-primary transition-colors">{tech.name}</h4>
-            <p className="text-text-muted text-xs leading-relaxed">{tech.text}</p>
-          </div>
-        ))}
+        <h3 className="font-display font-semibold text-2xl text-cream mb-6 reveal">Core Technology Stack</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { name: 'Next.js & React', text: 'Server-side rendering, app routing, static optimization, and modular component architecture.' },
+            { name: 'Node.js & Express', text: 'Robust backend services, modular RESTful APIs, authentication middleware, and business logic.' },
+            { name: 'PostgreSQL & Prisma', text: 'Relational data modeling, schema migrations, performant querying, and type safety.' },
+            { name: 'Tailwind CSS', text: 'Mobile-first styling, maintainable design systems, and responsive fluid layouts.' },
+            { name: 'RESTful APIs & Integrations', text: 'Clean API endpoints, transactional email pipelines, payment gateways, and third-party APIs.' },
+            { name: 'Git & Deployment', text: 'Professional Git branching workflows, environment security, and continuous production hosting on Vercel.' },
+          ].map((tech, i) => (
+            <div key={tech.name}
+              className={`glass rounded-xl p-5 border border-cream/15 hover:border-brand-green transition-all duration-200 group reveal stagger-${(i % 3) + 1}`}>
+              <h4 className="font-display text-cream font-semibold text-base mb-1.5 group-hover:text-brand-green transition-colors">{tech.name}</h4>
+              <p className="text-cream/70 text-xs leading-relaxed">{tech.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

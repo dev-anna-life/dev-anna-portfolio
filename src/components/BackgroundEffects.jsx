@@ -45,7 +45,7 @@ export default function BackgroundEffects() {
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(124, 179, 66, ${p.o})`
+        ctx.fillStyle = `rgba(250, 248, 243, ${p.o * 0.3})`
         ctx.fill()
       })
       animId = requestAnimationFrame(draw)
@@ -60,18 +60,18 @@ export default function BackgroundEffects() {
 
   return (
     <>
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-dark-bg" />
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-forest-deep" />
 
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary/8 rounded-full blur-[100px] animate-drift" />
-        <div className="absolute top-1/3 -right-32 w-80 h-80 bg-primary-accent/6 rounded-full blur-[100px] animate-drift-reverse" />
-        <div className="absolute -bottom-40 left-1/4 w-72 h-72 bg-blue-400/5 rounded-full blur-[90px] animate-float-slow" />
-        <div className="absolute top-2/3 left-1/2 w-64 h-64 bg-purple-400/5 rounded-full blur-[80px] animate-float-slower" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-accent/15 rounded-full blur-[140px] animate-drift" />
+        <div className="absolute top-1/3 -right-32 w-96 h-96 bg-brand-green/12 rounded-full blur-[140px] animate-drift-reverse" />
+        <div className="absolute -bottom-40 left-1/4 w-80 h-80 bg-forest-800/50 rounded-full blur-[120px] animate-float-slow" />
+        <div className="absolute top-2/3 left-1/2 w-72 h-72 bg-accent/10 rounded-full blur-[120px] animate-float-slower" />
       </div>
 
       <div
         ref={glowRef}
-        className="fixed top-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/4 blur-[120px] pointer-events-none -z-10 transition-transform duration-300 ease-out"
+        className="fixed top-0 left-0 w-[300px] h-[300px] rounded-full bg-accent/8 blur-[120px] pointer-events-none -z-10 transition-transform duration-300 ease-out"
       />
 
       <canvas

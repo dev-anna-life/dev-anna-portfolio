@@ -1,57 +1,48 @@
 import { useState } from 'react'
-import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import logo from '../assets/Logo.jpeg'
 
-const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact']
+const navLinks = ['Home', 'About', 'Skills', 'Certifications', 'Projects', 'Contact']
 
-export default function Navbar({ theme, toggleTheme }) {
+export default function Navbar() {
   const [active, setActive] = useState('Home')
   const [menuOpen, setMenuOpen] = useState(false)
 
   const scrollTo = (id) => {
-    setActive(id)
+    setActive(id === 'hero' ? 'Home' : id.charAt(0).toUpperCase() + id.slice(1))
     setMenuOpen(false)
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-dark-nav border-b border-dark-box transition-colors duration-300">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-forest-deep/95 backdrop-blur-md border-b border-cream/10 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button onClick={() => scrollTo('hero')} className="flex items-center gap-2">
-          <img src={logo} alt="Dev Anna" className="h-9 w-auto rounded" />
+        <button onClick={() => scrollTo('hero')} className="flex items-center gap-2 cursor-pointer">
+          <img src={logo} alt="Dev Anna" className="h-9 w-auto rounded border border-cream/15 shadow-sm" />
         </button>
 
-        <div className="flex items-center gap-4">
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            title="Toggle Light/Dark Mode"
-            className="p-2 rounded-full border border-dark-box text-text-main hover:border-primary hover:text-primary transition-all duration-200"
-          >
-            {theme === 'dark' ? <FaSun className="text-amber-400" /> : <FaMoon className="text-indigo-500" />}
-          </button>
-
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-text-main text-xl p-1" aria-label="Toggle menu">
+        <div className="flex items-center gap-6">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-cream text-xl p-1 cursor-pointer" aria-label="Toggle menu">
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
 
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => {
               const id = link === 'Home' ? 'hero' : link.toLowerCase()
               return (
                 <li key={link}>
                   <button
                     onClick={() => scrollTo(id)}
-                    className={`text-sm font-medium transition-colors duration-200 relative pb-1 ${
+                    className={`text-sm font-medium transition-colors duration-200 relative pb-1 cursor-pointer ${
                       active === link
-                        ? 'text-primary'
-                        : 'text-text-body hover:text-text-main'
+                        ? 'text-cream font-semibold'
+                        : 'text-cream/70 hover:text-cream'
                     }`}
                   >
                     {link}
                     {active === link && (
-                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-green rounded-full" />
                     )}
                   </button>
                 </li>
@@ -62,7 +53,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <a
             href="/resume.pdf"
             download
-            className="hidden md:flex items-center gap-2 px-4 py-2 border border-primary text-primary text-sm font-medium rounded-md hover:bg-primary hover:text-white transition-all duration-200"
+            className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-brand-green text-forest-deep text-sm font-bold rounded-md hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow"
           >
             ↓ Download CV
           </a>
@@ -70,21 +61,21 @@ export default function Navbar({ theme, toggleTheme }) {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-dark-nav/95 backdrop-blur-md border-t border-dark-box">
+        <div className="md:hidden bg-forest-deep/98 backdrop-blur-md border-t border-cream/10 shadow-2xl">
           <div className="flex flex-col items-center gap-4 px-6 py-6">
             {navLinks.map((link) => {
               const id = link === 'Home' ? 'hero' : link.toLowerCase()
               return (
                 <button key={link} onClick={() => scrollTo(id)}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    active === link ? 'text-primary' : 'text-text-body hover:text-text-main'
+                  className={`text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                    active === link ? 'text-brand-green font-bold' : 'text-cream/70 hover:text-cream'
                   }`}>
                   {link}
                 </button>
               )
             })}
             <a href="/resume.pdf" download
-              className="flex items-center gap-2 px-4 py-2 border border-primary text-primary text-sm font-medium rounded-md hover:bg-primary hover:text-white transition-all duration-200">
+              className="flex items-center gap-2 px-5 py-2.5 bg-brand-green text-forest-deep text-sm font-bold rounded-md hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow">
               ↓ Download CV
             </a>
           </div>

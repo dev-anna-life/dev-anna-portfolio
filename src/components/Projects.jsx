@@ -1,3 +1,4 @@
+import eponixImg from '../assets/eponix-digital.jpg'
 import cassmoImg from '../assets/cassmo-homes.png'
 import fashionImg from '../assets/fashion-store.jpg'
 import amakaImg from '../assets/amaka-beauty.jpg'
@@ -8,10 +9,19 @@ import TiltCard from './TiltCard'
 
 const projects = [
   {
+    img: eponixImg,
+    name: 'Eponix Digital',
+    tags: ['Next.js', 'TypeScript', 'Prisma ORM', 'Paystack API', 'Tailwind CSS'],
+    desc: 'Full-stack business infrastructure and corporate compliance platform for CAC business filings, trademark registration, Paystack payment verification, and real-time application tracking.',
+    link: 'https://harrison-mosco.vercel.app/',
+    github: 'https://github.com/dev-anna-life/harrison-mosco',
+    featured: true,
+  },
+  {
     img: cassmoImg,
     name: 'Cassmo Homes',
-    tags: ['React', 'Tailwind', 'Real Estate'],
-    desc: 'A premium real estate website showcase featuring luxury properties, interactive property tours & modern architectural branding.',
+    tags: ['Next.js', 'PostgreSQL', 'Prisma ORM', 'NextAuth', 'Tailwind CSS'],
+    desc: 'Full-stack luxury real estate platform built with Next.js, PostgreSQL & Prisma ORM. Features secure authentication, referral tracking, and dynamic property showcase.',
     link: 'https://cassmo-homes.vercel.app/',
     github: 'https://github.com/dev-anna-life/cassmo-homes',
     featured: true
@@ -19,51 +29,51 @@ const projects = [
   {
     img: fashionImg,
     name: 'Fashion Store',
-    tags: ['React', 'Tailwind'],
-    desc: 'A vibrant ecommerce fashion interface with product listings, cart functionality & smooth animations.',
+    tags: ['React', 'Node.js / REST API', 'Tailwind CSS', 'State Management'],
+    desc: 'Dynamic e-commerce web platform with persistent cart state, responsive product catalog, and REST API integration for modern fashion retail.',
     link: 'https://fashion-store-six-ivory.vercel.app/',
     github: 'https://github.com/dev-anna-life/Fashion-Store',
   },
   {
+    img: realtorImg,
+    name: 'MrMultipreneur Realtor',
+    tags: ['Next.js', 'Node.js API Routes', 'Nodemailer', 'Tailwind CSS'],
+    desc: 'Modern real estate booking platform built with Next.js featuring automated inspection bookings dispatched via Nodemailer backend API routes.',
+    link: 'https://mr-multipreneur-realtor-6779.vercel.app/',
+    github: 'https://github.com/dev-anna-life/mr-multipreneur-realtor',
+  },
+  {
     img: amakaImg,
     name: 'Amaka Beauty Empire',
-    tags: ['React', 'Tailwind'],
-    desc: 'A glowing beauty brand website with elegant product showcases and smooth UI.',
+    tags: ['React', 'Tailwind CSS', 'UI/UX Design'],
+    desc: 'Glowing beauty brand web showcase with elegant product catalogs, mobile-optimized navigation, and smooth brand aesthetic.',
     link: 'https://amaka-beauty-empire.vercel.app/',
     github: 'https://github.com/dev-anna-life/Amaka-Beauty-Empire',
   },
   {
     img: multipreneurImg,
     name: 'Multipreneur',
-    tags: ['HTML', 'Tailwind', 'JavaScript'],
-    desc: 'A multipreneur landing page with responsive layouts and Tailwind styling.',
+    tags: ['JavaScript', 'Tailwind CSS', 'Responsive UI'],
+    desc: 'Responsive multi-service business landing page engineered for high conversion with fluid Tailwind layouts.',
     link: 'https://dev-anna-life.github.io/Multi-Preneur/',
     github: 'https://github.com/dev-anna-life/Multi-Preneur',
-  },
-  {
-    img: realtorImg,
-    name: 'MrMultipreneur Realtor',
-    tags: ['Next.js', 'Tailwind', 'Nodemailer'],
-    desc: 'A modern real estate landing page for property inspection bookings with a sleek responsive design.',
-    link: 'https://mr-multipreneur-realtor-6779.vercel.app/',
-    github: 'https://github.com/dev-anna-life/mr-multipreneur-realtor',
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-8 md:px-16">
+    <section id="projects" className="relative bg-forest-deep text-cream py-20 px-8 md:px-16 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
 
-        <div className="reveal flex justify-between items-end mb-16">
+        <div className="reveal flex justify-between items-end mb-14">
           <div>
-            <p className="text-primary-accent text-xs font-bold uppercase tracking-widest mb-3">Projects</p>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-text-main leading-tight">
-              Things I've built
+            <p className="text-brand-green text-xs font-semibold uppercase tracking-[0.22em] mb-3">Portfolio</p>
+            <h2 className="font-display font-semibold text-4xl md:text-5xl text-cream leading-tight">
+              Featured Projects
             </h2>
           </div>
           <a href="https://github.com/dev-anna-life" target="_blank" rel="noreferrer"
-            className="hidden md:inline-flex items-center gap-2 border border-primary text-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-all duration-200">
+            className="hidden md:inline-flex items-center gap-2 border border-cream/30 text-cream px-5 py-2 rounded-full text-sm font-semibold hover:bg-cream hover:text-forest-deep transition-all duration-200 cursor-pointer">
             <FaGithub /> View GitHub
           </a>
         </div>
@@ -72,35 +82,35 @@ export default function Projects() {
           {projects.map((p, i) => (
             <TiltCard key={p.name}>
               <div
-                className={`group glass rounded-2xl overflow-hidden reveal stagger-${(i % 4) + 1} h-full flex flex-col justify-between relative`}>
+                className={`group glass rounded-2xl overflow-hidden reveal stagger-${(i % 4) + 1} h-full flex flex-col justify-between relative border border-cream/15 hover:border-brand-green shadow-card hover:shadow-2xl transition-all duration-300`}>
                 {p.featured && (
-                  <span className="absolute top-3 right-3 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg">
+                  <span className="absolute top-3 right-3 z-10 bg-brand-green text-forest-deep text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                     Featured
                   </span>
                 )}
                 <div>
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden bg-forest-surface">
                     <img src={p.img} alt={`${p.name} project screenshot`} loading="lazy" width="400" height="288"
                       className="w-full h-52 object-cover object-top transition-all duration-500 group-hover:scale-105" />
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-display font-bold text-lg text-text-main mb-2">{p.name}</h3>
-                    <div className="flex gap-2 flex-wrap mb-3">
+                  <div className="p-6">
+                    <h3 className="font-display font-semibold text-xl text-cream mb-2.5">{p.name}</h3>
+                    <div className="flex gap-2 flex-wrap mb-3.5">
                       {p.tags.map(t => (
-                        <span key={t} className="text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full">{t}</span>
+                        <span key={t} className="text-xs font-medium bg-cream/10 text-cream/90 border border-cream/20 px-3 py-1 rounded-full">{t}</span>
                       ))}
                     </div>
-                    <p className="text-text-muted text-sm leading-relaxed mb-5">{p.desc}</p>
+                    <p className="text-cream/70 text-sm leading-relaxed mb-4">{p.desc}</p>
                   </div>
                 </div>
 
-                <div className="p-5 pt-0 flex gap-3">
+                <div className="p-6 pt-0 flex gap-3">
                   <a href={p.link} target="_blank" rel="noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-primary-light transition-colors duration-200">
+                    className="flex-1 flex items-center justify-center gap-2 bg-brand-green text-forest-deep px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow cursor-pointer">
                     <FaExternalLinkAlt className="text-xs" /> Live Demo
                   </a>
                   <a href={p.github} target="_blank" rel="noreferrer"
-                    className="flex items-center justify-center gap-2 border border-dark-box text-text-body px-4 py-2.5 rounded-lg text-sm font-semibold hover:border-primary hover:text-primary transition-all duration-200">
+                    className="flex items-center justify-center gap-2 border border-cream/20 bg-forest-surface text-cream px-4 py-2.5 rounded-lg text-sm font-semibold hover:border-brand-green hover:text-brand-green transition-all duration-200 shadow-sm cursor-pointer">
                     <FaGithub />
                   </a>
                 </div>

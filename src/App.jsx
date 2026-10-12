@@ -5,46 +5,33 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
+import Certifications from './components/Certifications'
 import BackgroundEffects from './components/BackgroundEffects'
 import PageTransition from './components/PageTransition'
 import { ExperienceSkeleton, ProjectsSkeleton, ContactSkeleton } from './components/Skeleton'
 
-const Experience = lazy(() => import('./components/Experience'))
 const Projects = lazy(() => import('./components/Projects'))
+const Experience = lazy(() => import('./components/Experience'))
 const Contact = lazy(() => import('./components/Contact'))
 
 export default function Home() {
   useReveal()
   useSmoothScroll()
 
-  const [theme, setTheme] = useState('dark')
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
-  }
-
   return (
-    <main className="bg-dark-bg text-text-body font-sans min-h-screen transition-colors duration-300">
+    <main className="font-body min-h-screen antialiased selection:bg-brand-green selection:text-white">
       <BackgroundEffects />
       <PageTransition />
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <Hero />
       <About />
       <Skills />
-      <Suspense fallback={<ExperienceSkeleton />}>
-        <Experience />
-      </Suspense>
+      <Certifications />
       <Suspense fallback={<ProjectsSkeleton />}>
         <Projects />
+      </Suspense>
+      <Suspense fallback={<ExperienceSkeleton />}>
+        <Experience />
       </Suspense>
       <Suspense fallback={<ContactSkeleton />}>
         <Contact />

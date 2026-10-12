@@ -1,31 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-main: #0D1117;
-  --bg-nav: #0D1117;
-  --bg-card: rgba(26, 31, 28, 0.6);
-  --bg-card-hover: rgba(37, 42, 39, 0.8);
-  --text-main: #F8F9FA;
-  --text-body: #E8EAED;
-  --text-muted: #9AA0A6;
-  --border-color: rgba(255, 255, 255, 0.06);
-  --border-glow: rgba(124, 179, 66, 0.4);
-}
-
-[data-theme="light"] {
-  --bg-main: #f8fafc;
-  --bg-nav: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --text-main: #0f172a;
-  --text-body: #334155;
-  --text-muted: #64748b;
-  --border-color: rgba(0, 0, 0, 0.08);
-  --border-glow: rgba(124, 179, 66, 0.4);
+  --bg-main: #082C1A;
+  --bg-nav: rgba(8, 44, 26, 0.95);
+  --bg-card: rgba(14, 56, 35, 0.7);
+  --bg-card-hover: rgba(18, 68, 43, 0.85);
+  --text-main: #FAF8F3;
+  --text-body: #E2DDD3;
+  --text-muted: #A4B5AA;
+  --border-color: rgba(250, 248, 243, 0.14);
+  --border-glow: rgba(36, 181, 80, 0.3);
+  --font-fraunces: "Fraunces", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
 }
 
 * { 
@@ -41,55 +31,17 @@ html, body {
 }
 
 body {
-  background-color: var(--bg-main);
+  background-color: #082C1A;
   color: var(--text-body);
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Light Theme Component Overrides */
-[data-theme="light"] body {
-  background-color: #f8fafc !important;
-  color: #334155 !important;
-}
-
-[data-theme="light"] nav {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-[data-theme="light"] .glass {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
-}
-
-[data-theme="light"] .text-text-main {
-  color: #0f172a !important;
-}
-
-[data-theme="light"] .text-text-body {
-  color: #334155 !important;
-}
-
-[data-theme="light"] .text-text-muted {
-  color: #64748b !important;
-}
-
-[data-theme="light"] .bg-dark-bg, 
-[data-theme="light"] .bg-dark-card,
-[data-theme="light"] .bg-dark-box,
-[data-theme="light"] .bg-dark-nav {
-  background-color: #ffffff !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  font-family: var(--font-inter);
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
-::-webkit-scrollbar-thumb { background: #7CB342; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #082C1A; }
+::-webkit-scrollbar-thumb { background: #0E4D2A; border-radius: 3px; }
 
 .photo-glow {
-  filter: drop-shadow(0 0 40px rgba(124, 179, 66, 0.25));
+  filter: drop-shadow(0 14px 35px rgba(36, 181, 80, 0.22));
 }
 
 @keyframes progressFill {
@@ -144,7 +96,13 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
+}
+
+.glass:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(36, 181, 80, 0.35);
 }
 
 .glass-light {
@@ -152,4 +110,5 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
