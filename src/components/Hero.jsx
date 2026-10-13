@@ -59,7 +59,7 @@ export default function Hero() {
               className="px-6 py-3.5 bg-brand-green text-forest-deep font-bold rounded-md hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow flex items-center gap-2 text-sm cursor-pointer">
               View Projects
             </MagneticButton>
-            <MagneticButton as="a" href="/resume.pdf" download
+            <MagneticButton as="a" href="/resume.pdf" download="Ugwuanyi-Annastesia-Dev-Anna-Resume.pdf"
               className="px-6 py-3.5 border border-cream/30 bg-transparent text-cream font-medium rounded-md hover:bg-cream/10 hover:border-cream transition-all duration-200 shadow-sm flex items-center gap-2 text-sm cursor-pointer">
               Download CV
             </MagneticButton>

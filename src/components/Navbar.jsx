@@ -68,7 +68,7 @@ export default function Navbar() {
 
           <a
             href="/resume.pdf"
-            download
+            download="Ugwuanyi-Annastesia-Dev-Anna-Resume.pdf"
             className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-brand-green text-forest-deep text-sm font-bold rounded-md hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow"
           >
             ↓ Download CV
@@ -90,7 +90,7 @@ export default function Navbar() {
                 </button>
               )
             })}
-            <a href="/resume.pdf" download
+            <a href="/resume.pdf" download="Ugwuanyi-Annastesia-Dev-Anna-Resume.pdf"
               className="flex items-center gap-2 px-5 py-2.5 bg-brand-green text-forest-deep text-sm font-bold rounded-md hover:bg-brand-greenDark hover:text-white transition-all duration-200 shadow-btn-glow">
               ↓ Download CV
             </a>
