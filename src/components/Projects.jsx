@@ -13,6 +13,11 @@ const projects = [
     name: 'Eponix Digital',
     tags: ['Next.js', 'TypeScript', 'Prisma ORM', 'Paystack API', 'Tailwind CSS'],
     desc: 'Full-stack business infrastructure and corporate compliance platform for CAC business filings, trademark registration, Paystack payment verification, and real-time application tracking.',
+    highlights: [
+      'Secure Paystack checkout with instant payment verification',
+      'Automated CAC filing intake and document tracking portal',
+      'End-to-end type safety using Next.js, TypeScript & Prisma ORM',
+    ],
     link: 'https://harrison-mosco.vercel.app/',
     github: 'https://github.com/dev-anna-life/harrison-mosco',
     featured: true,
@@ -22,6 +27,11 @@ const projects = [
     name: 'Cassmo Homes',
     tags: ['Next.js', 'PostgreSQL', 'Prisma ORM', 'NextAuth', 'Tailwind CSS'],
     desc: 'Full-stack luxury real estate platform built with Next.js, PostgreSQL & Prisma ORM. Features secure authentication, referral tracking, and dynamic property showcase.',
+    highlights: [
+      'PostgreSQL & Prisma ORM database models for luxury properties',
+      'User authentication paired with custom referral tracking logic',
+      'Fast responsive property showcase with filtered queries',
+    ],
     link: 'https://cassmo-homes.vercel.app/',
     github: 'https://github.com/dev-anna-life/cassmo-homes',
     featured: true
@@ -31,6 +41,11 @@ const projects = [
     name: 'Fashion Store',
     tags: ['React', 'Node.js / REST API', 'Tailwind CSS', 'State Management'],
     desc: 'Dynamic e-commerce web platform with persistent cart state, responsive product catalog, and REST API integration for modern fashion retail.',
+    highlights: [
+      'Persistent client-side shopping cart with real-time counters',
+      'Connected REST API endpoints for dynamic catalog browsing',
+      'Mobile-first checkout flow optimized for higher conversions',
+    ],
     link: 'https://fashion-store-six-ivory.vercel.app/',
     github: 'https://github.com/dev-anna-life/Fashion-Store',
   },
@@ -39,6 +54,11 @@ const projects = [
     name: 'MrMultipreneur Realtor',
     tags: ['Next.js', 'Node.js API Routes', 'Nodemailer', 'Tailwind CSS'],
     desc: 'Modern real estate booking platform built with Next.js featuring automated inspection bookings dispatched via Nodemailer backend API routes.',
+    highlights: [
+      'Direct backend inspection booking dispatch via Nodemailer',
+      'Custom form validation with real-time feedback states',
+      'Production-deployed Next.js architecture with clean SEO',
+    ],
     link: 'https://mr-multipreneur-realtor-6779.vercel.app/',
     github: 'https://github.com/dev-anna-life/mr-multipreneur-realtor',
   },
@@ -47,6 +67,11 @@ const projects = [
     name: 'Amaka Beauty Empire',
     tags: ['React', 'Tailwind CSS', 'UI/UX Design'],
     desc: 'Glowing beauty brand web showcase with elegant product catalogs, mobile-optimized navigation, and smooth brand aesthetic.',
+    highlights: [
+      'Sub-second asset loading and refined visual presentation',
+      'Direct customer ordering route linked to WhatsApp channel',
+      'Mobile-friendly product catalog with smooth interactions',
+    ],
     link: 'https://amaka-beauty-empire.vercel.app/',
     github: 'https://github.com/dev-anna-life/Amaka-Beauty-Empire',
   },
@@ -55,6 +80,11 @@ const projects = [
     name: 'Multipreneur',
     tags: ['JavaScript', 'Tailwind CSS', 'Responsive UI'],
     desc: 'Responsive multi-service business landing page engineered for high conversion with fluid Tailwind layouts.',
+    highlights: [
+      'Structured conversion funnels for multi-service offerings',
+      'Clean semantic markup ensuring cross-browser reliability',
+      'Ultra-lightweight footprint with zero extraneous dependencies',
+    ],
     link: 'https://dev-anna-life.github.io/Multi-Preneur/',
     github: 'https://github.com/dev-anna-life/Multi-Preneur',
   },
@@ -101,6 +131,16 @@ export default function Projects() {
                       ))}
                     </div>
                     <p className="text-cream/70 text-sm leading-relaxed mb-4">{p.desc}</p>
+                    {p.highlights && (
+                      <div className="space-y-1.5 mb-5 pt-3 border-t border-cream/10">
+                        {p.highlights.map((h, hi) => (
+                          <div key={hi} className="flex items-start gap-2 text-xs text-cream/80">
+                            <span className="text-brand-green font-bold shrink-0 mt-0.5">✓</span>
+                            <span>{h}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
