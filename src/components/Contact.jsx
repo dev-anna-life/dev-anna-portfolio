@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaTiktok, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
+import logo from '../assets/dev-anna-logo-transparent.png'
 
 const socials = [
   { icon: FaGithub, label: 'GitHub', href: 'https://github.com/dev-anna-life' },
@@ -193,8 +194,15 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="text-center pt-8 border-t border-cream/15 text-xs text-cream/60">
-            <p>© {new Date().getFullYear()} Annastesia Amarachi Ugwuanyi (Dev Anna). Built with Next-level passion & clean architecture.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-cream/15 text-xs text-cream/60">
+            <div className="flex items-center gap-2.5">
+              <img src={logo} alt="Dev Anna" className="h-6 w-auto object-contain" />
+              <span className="flex flex-col text-left">
+                <span className="font-extrabold tracking-wider leading-none text-cream text-[13px]">DEV ANNA</span>
+                <small className="text-[7px] font-mono tracking-[0.2em] text-brand-green uppercase font-bold mt-0.5">SOFTWARE ENGINEER</small>
+              </span>
+            </div>
+            <p className="text-center sm:text-right">© {new Date().getFullYear()} Annastesia Amarachi Ugwuanyi (Dev Anna). Built with modern clean architecture.</p>
           </div>
 
         </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import logo from '../assets/Logo.jpeg'
+import logo from '../assets/dev-anna-logo-transparent.png'
 
 const navLinks = ['Home', 'About', 'Skills', 'Certifications', 'Projects', 'Contact']
 
@@ -18,8 +18,24 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-forest-deep/95 backdrop-blur-md border-b border-cream/10 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <button onClick={() => scrollTo('hero')} className="flex items-center gap-2 cursor-pointer">
-          <img src={logo} alt="Dev Anna" className="h-9 w-auto rounded border border-cream/15 shadow-sm" />
+        <button
+          onClick={() => scrollTo('hero')}
+          className="flex items-center gap-2.5 group cursor-pointer text-left"
+          aria-label="Dev Anna Home"
+        >
+          <img
+            src={logo}
+            alt="Dev Anna Emblem"
+            className="h-7 sm:h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+          />
+          <span className="flex flex-col">
+            <span className="font-extrabold tracking-wider leading-none text-cream text-[15px] sm:text-[16px]">
+              DEV ANNA
+            </span>
+            <small className="text-[7.5px] font-mono tracking-[0.22em] text-brand-green uppercase font-bold mt-0.5">
+              SOFTWARE ENGINEER
+            </small>
+          </span>
         </button>
 
         <div className="flex items-center gap-6">
