@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Temmy Beauty Space | Luxury Hair & Wig Mobile Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              pink: '#FF2E88',
+              pinkDark: '#D81B60',
+              pinkLight: '#FFF0F5',
+              dark: '#121214',
+              gold: '#D4AF37',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0c0c0e;
+      color: #f4f4f5;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .product-glow:hover {
+      box-shadow: 0 10px 25px -5px rgba(255, 46, 136, 0.3);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased pb-28">
+
+  <!-- Top Announcement Bar -->
+  <aside aria-label="Store Announcement" class="bg-gradient-to-r from-brand-pink via-pink-600 to-rose-500 text-white text-xs font-bold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span>🔥 TikTok Viral Deals Live Now</span>
+    <span class="opacity-75">·</span>
+    <span>Nationwide Delivery from Iyana-Ipaja</span>
+  </aside>
+
+  <!-- Mobile App Header -->
+  <header class="sticky top-0 z-30 bg-[#121214]/95 backdrop-blur-md border-b border-white/10 px-4 py-3.5">
+    <div class="max-w-md mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/temmy-assets/logo.jpg" alt="Temmy Beauty Space Logo" class="w-10 h-10 rounded-full object-cover border-2 border-brand-pink shadow-md" />
+        <div>
+          <h1 class="font-serif font-bold text-base text-white tracking-wide leading-tight">TEMMY BEAUTY SPACE</h1>
+          <p class="text-[11px] text-zinc-400 font-medium flex items-center gap-1">
+            <span class="text-brand-pink font-semibold">📍 Iyana-Ipaja, Lagos</span>
+            <span>· Wholesale & Retail</span>
+          </p>
+        </div>
+      </div>
+      <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-zinc-800/80 border border-white/10 text-white hover:border-brand-pink transition-colors" aria-label="Open Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-pink text-white text-[10px] font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-lg hidden">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container (App-width constrained) -->
+  <main class="max-w-md mx-auto px-4 pt-4">
+
+    <!-- Store Bio Card -->
+    <div class="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-white/10 rounded-2xl p-4 mb-5 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-brand-pink/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="flex items-start justify-between">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-pink/15 border border-brand-pink/30 text-brand-pink text-[11px] font-bold mb-2">
+            <span>✨ 100% Raw & Virgin Hairs Only</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed">
+            Order your viral Chinese bone straight, bobs, and closure wigs in 1-click with instant Paystack or WhatsApp checkout.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-white/5 text-center text-[10px] text-zinc-400 font-semibold">
+        <div class="p-1 rounded bg-zinc-800/40">⚡ Same-Day Lagos Dispatch</div>
+        <div class="p-1 rounded bg-zinc-800/40">📦 Nationwide Waybill</div>
+        <div class="p-1 rounded bg-zinc-800/40">🔒 100% Secure Payment</div>
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar pb-3 mb-4 text-xs font-semibold">
+      <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-4 py-2 rounded-full bg-brand-pink text-white shadow-md transition-all shrink-0">🔥 All Wigs</button>
+      <button onclick="filterCategory('bone-straight')" id="btn-bone-straight" class="cat-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-300 border border-white/10 hover:border-brand-pink transition-all shrink-0">Bone Straight</button>
+      <button onclick="filterCategory('bob')" id="btn-bob" class="cat-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-300 border border-white/10 hover:border-brand-pink transition-all shrink-0">Bobs & Fringe</button>
+      <button onclick="filterCategory('closure')" id="btn-closure" class="cat-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-300 border border-white/10 hover:border-brand-pink transition-all shrink-0">Closure & Waves</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="productGrid" class="grid grid-cols-2 gap-3.5 mb-8">
+      <!-- Injected by JavaScript -->
+    </div>
+
+    <!-- Trust & Physical Store Info -->
+    <div class="bg-zinc-900/80 border border-white/10 rounded-2xl p-4 mb-6 text-xs text-zinc-400 space-y-2">
+      <div class="flex items-center gap-2 text-white font-bold text-sm">
+        <span class="text-brand-pink">🏬</span> Visit Physical Store
+      </div>
+      <p>📍 Location: <strong>Iyana-Ipaja, Lagos, Nigeria</strong></p>
+      <p>📞 Phone / WhatsApp: <a href="https://wa.me/2348154293425" class="text-brand-pink font-semibold underline">08154293425</a></p>
+      <p>🕒 Mon - Sat: 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <!-- Developer Credit / Client Pitch Banner -->
+    <div class="bg-gradient-to-r from-zinc-900 via-zinc-950 to-zinc-900 border border-brand-pink/30 rounded-2xl p-4 text-center">
+      <p class="text-[11px] uppercase tracking-wider text-brand-pink font-bold mb-1">Exclusive Interactive Prototype</p>
+      <h3 class="text-sm font-bold text-white mb-1.5">Engineered for Temmy Beauty Space</h3>
+      <p class="text-xs text-zinc-400 leading-relaxed mb-3">
+        Built by <strong class="text-white">Dev Anna</strong> to stop losing WhatsApp sales and automate 24/7 customer orders with instant Paystack checkout.
+      </p>
+      <a href="https://wa.me/2348146790636?text=Hi%20Dev%20Anna,%20I%20love%20the%20Temmy%20Beauty%20Space%20store%20demo!%20Let's%20connect%20my%20domain."
+        class="inline-flex items-center gap-2 bg-brand-pink text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-lg hover:bg-brand-pinkDark transition-all">
+        💬 Claim This Store for Your Brand
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Sticky Bottom Cart Floating Bar -->
+  <div id="bottomBar" class="fixed bottom-0 left-0 right-0 z-40 bg-[#121214]/95 backdrop-blur-md border-t border-white/10 p-3 max-w-md mx-auto hidden">
+    <button onclick="toggleCart()" class="w-full bg-gradient-to-r from-brand-pink to-pink-600 text-white font-bold py-3.5 px-5 rounded-xl flex items-center justify-between shadow-xl shadow-brand-pink/25 hover:opacity-95 transition-all">
+      <div class="flex items-center gap-2.5">
+        <span class="bg-white/20 text-white text-xs px-2.5 py-0.5 rounded-full font-extrabold" id="barCount">0</span>
+        <span class="text-sm font-bold">View Bag & Checkout</span>
+      </div>
+      <span class="text-base font-extrabold" id="barTotal">₦0</span>
+    </button>
+  </div>
+
+  <!-- Cart & Checkout Modal Drawer -->
+  <div id="cartModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-all">
+    <div class="bg-zinc-900 border border-white/15 w-full max-w-md rounded-t-3xl sm:rounded-3xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-slideUp">
+      
+      <!-- Drawer Header -->
+      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-zinc-950">
+        <div class="flex items-center gap-2">
+          <span class="text-brand-pink font-bold text-lg">🛍️</span>
+          <h2 class="text-base font-bold text-white">Your Shopping Bag</h2>
+        </div>
+        <button onclick="toggleCart()" class="p-2 text-zinc-400 hover:text-white rounded-full bg-zinc-800 text-xs font-bold" aria-label="Close Cart">✕</button>
+      </div>
+
+      <!-- Drawer Body (Items + Checkout Form) -->
+      <div class="p-4 overflow-y-auto space-y-5 flex-1 hide-scrollbar">
+        
+        <!-- Cart Items List -->
+        <div id="cartItemsList" class="space-y-3">
+          <!-- Injected by JavaScript -->
+        </div>
+
+        <!-- Checkout Intake Form -->
+        <div id="checkoutFormBlock" class="pt-3 border-t border-white/10 space-y-3.5">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-brand-pink">Delivery & Contact Details</h3>
+          
+          <div class="space-y-2.5">
+            <div>
+              <label class="block text-[11px] text-zinc-400 font-semibold mb-1">Your Full Name *</label>
+              <input type="text" id="custName" placeholder="e.g. Chioma Adebayo" class="w-full bg-zinc-800 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-pink" />
+            </div>
+
+            <div>
+              <label class="block text-[11px] text-zinc-400 font-semibold mb-1">WhatsApp Phone Number *</label>
+              <input type="tel" id="custPhone" placeholder="e.g. 08123456789" class="w-full bg-zinc-800 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-pink" />
+            </div>
+
+            <div>
+              <label class="block text-[11px] text-zinc-400 font-semibold mb-1">Delivery State *</label>
+              <select id="custState" onchange="updateDeliveryFee()" class="w-full bg-zinc-800 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-brand-pink">
+                <option value="lagos">Lagos State (₦2,500)</option>
+                <option value="outside">Outside Lagos (₦4,500)</option>
+                <option value="pickup">Pick Up at Iyana-Ipaja Store (Free)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] text-zinc-400 font-semibold mb-1">Delivery Address *</label>
+              <textarea id="custAddress" rows="2" placeholder="House number, street name, area, city..." class="w-full bg-zinc-800 border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-brand-pink resize-none"></textarea>
+            </div>
+          </div>
+
+          <!-- Price Calculations -->
+          <div class="p-3 bg-zinc-950 rounded-xl border border-white/5 space-y-1.5 text-xs">
+            <div class="flex justify-between text-zinc-400">
+              <span>Items Total:</span>
+              <span id="calcSubtotal">₦0</span>
+            </div>
+            <div class="flex justify-between text-zinc-400">
+              <span>Delivery Fee:</span>
+              <span id="calcDelivery">₦2,500</span>
+            </div>
+            <div class="flex justify-between text-white font-bold pt-1.5 border-t border-white/10 text-sm">
+              <span>Grand Total:</span>
+              <span id="calcTotal" class="text-brand-pink">₦0</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Drawer Footer Action Buttons -->
+      <div class="p-4 border-t border-white/10 bg-zinc-950 space-y-2">
+        <button onclick="triggerPaystackDemo()" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-extrabold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-green-900/30 transition-all">
+          <span>🔒 Pay Now via Paystack</span>
+          <span class="text-[10px] font-normal opacity-90">(Card / Bank Transfer)</span>
+        </button>
+
+        <button onclick="triggerWhatsAppOrder()" class="w-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-900/50 font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transition-all">
+          <span>💬 Or Send Order Directly to Temmy on WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Paystack Success Simulation Modal -->
+  <div id="paystackSuccessModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-zinc-900 border border-emerald-500/50 rounded-3xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+      <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto border border-emerald-500/40">
+        ✓
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-white">Payment Verified!</h3>
+        <p class="text-xs text-zinc-400 mt-1">Paystack Reference: <code class="text-emerald-400 font-mono">PSTK_LIVE_7792</code></p>
+      </div>
+      <div class="p-3 bg-zinc-950 rounded-xl text-left text-xs space-y-1.5 text-zinc-300">
+        <p><strong>Customer:</strong> <span id="successName">Chioma</span></p>
+        <p><strong>Amount Paid:</strong> <span id="successAmount" class="text-emerald-400 font-bold">₦24,500</span></p>
+        <p><strong>Destination:</strong> <span id="successAddress">Iyana-Ipaja</span></p>
+        <p class="text-[10px] text-zinc-500 pt-1">Automated SMS & WhatsApp dispatch triggered to Temmy Beauty Space store management.</p>
+      </div>
+      <button onclick="closeSuccessModal()" class="w-full bg-brand-pink text-white font-bold py-3 rounded-xl text-xs hover:bg-brand-pinkDark transition-all">
+        Back to Store
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Real products from Temmy's viral TikToks!
+    const products = [
+      {
+        id: 1,
+        category: 'bob',
+        name: 'Full Frontal Chinese Bob',
+        price: 22000,
+        oldPrice: 28000,
+        tag: '🔥 19k Views Viral',
+        img: '/temmy-assets/burgundy-bob.jpg',
+        lengths: ['8 inch', '10 inch', '12 inch'],
+        color: 'Burgundy Wine Red',
+        desc: 'Pre-plucked frontal, silky straight bone texture, ready-to-wear.'
+      },
+      {
+        id: 2,
+        category: 'bone-straight',
+        name: 'Ginger Chinese Bone Straight',
+        price: 25000,
+        oldPrice: 32000,
+        tag: 'Trending Color ✨',
+        img: '/temmy-assets/ginger-straight.jpg',
+        lengths: ['12 inch', '14 inch', '16 inch'],
+        color: 'Vibrant Ginger Orange',
+        desc: '100% human blend bone straight with heat resistance and high shine.'
+      },
+      {
+        id: 3,
+        category: 'bone-straight',
+        name: 'Darkroot 5x5 Closure Straight',
+        price: 30000,
+        oldPrice: 38000,
+        tag: 'Premium HD 🌟',
+        img: '/temmy-assets/burgundy-straight.jpg',
+        lengths: ['14 inch', '16 inch', '18 inch'],
+        color: 'Dark Wine Burgundy',
+        desc: 'Seamless melt lace closure with double-drawn fullness.'
+      },
+      {
+        id: 4,
+        category: 'closure',
+        name: '5x5 Luxury Closure Wig',
+        price: 30000,
+        oldPrice: 36000,
+        tag: 'Best Seller 👑',
+        img: '/temmy-assets/closure-wig.jpg',
+        lengths: ['12 inch', '14 inch'],
+        color: 'Natural Black 1B',
+        desc: 'Easy everyday wear with breathable dome cap and combs.'
+      },
+      {
+        id: 5,
+        category: 'closure',
+        name: 'Full Frontal Auburn Bounce',
+        price: 32000,
+        oldPrice: 40000,
+        tag: 'Bouncy Waves 🎀',
+        img: '/temmy-assets/auburn-waves.jpg',
+        lengths: ['12 inch', '14 inch', '16 inch'],
+        color: 'Auburn Copper',
+        desc: 'Voluminous body wave with bouncy defined curls.'
+      },
+      {
+        id: 6,
+        category: 'bob',
+        name: 'Darkroot Fringe Bob Wig',
+        price: 25000,
+        oldPrice: 30000,
+        tag: 'Zero Glue Needed',
+        img: '/temmy-assets/burgundy-bob.jpg',
+        lengths: ['8 inch', '10 inch'],
+        color: 'Burgundy Black Root',
+        desc: 'Glueless ready-to-go fringe bob for fast morning styling.'
+      }
+    ];
+
+    let cart = [];
+    let activeFilter = 'all';
+
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      const filtered = activeFilter === 'all' 
+        ? products 
+        : products.filter(p => p.category === activeFilter);
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden flex flex-col justify-between product-glow transition-all duration-300">
+          <div class="relative">
+            <img src="${p.img}" alt="${p.name}" class="w-full h-44 object-cover object-top" />
+            <span class="absolute top-2 left-2 bg-brand-pink text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full shadow-md">
+              ${p.tag}
+            </span>
+          </div>
+          <div class="p-3 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="font-bold text-xs text-white leading-tight mb-1">${p.name}</h3>
+              <p class="text-[10px] text-zinc-400 line-clamp-1 mb-2">${p.color} · ${p.desc}</p>
+            </div>
+            <div>
+              <div class="flex items-baseline gap-1.5 mb-2.5">
+                <span class="text-sm font-extrabold text-white">₦${p.price.toLocaleString()}</span>
+                <span class="text-[10px] text-zinc-500 line-through">₦${p.oldPrice.toLocaleString()}</span>
+              </div>
+              <button onclick="addToCart(${p.id})" class="w-full bg-zinc-800 hover:bg-brand-pink text-white text-[11px] font-bold py-2 rounded-xl transition-colors flex items-center justify-center gap-1.5">
+                <span>+ Add to Bag</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCategory(cat) {
+      activeFilter = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-pink', 'text-white');
+        btn.classList.add('bg-zinc-900', 'text-zinc-300');
+      });
+      const activeBtn = document.getElementById('btn-' + cat);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-zinc-900', 'text-zinc-300');
+        activeBtn.classList.add('bg-brand-pink', 'text-white');
+      }
+      renderProducts();
+    }
+
+    function addToCart(prodId) {
+      const prod = products.find(p => p.id === prodId);
+      const existing = cart.find(item => item.id === prodId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...prod, qty: 1 });
+      }
+      updateCartUI();
+      // Optional subtle vibration feedback if supported
+      if (navigator.vibrate) navigator.vibrate(40);
+    }
+
+    function changeQty(prodId, delta) {
+      const item = cart.find(i => i.id === prodId);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== prodId);
+        }
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      const badge = document.getElementById('cartBadge');
+      const bottomBar = document.getElementById('bottomBar');
+      const barCount = document.getElementById('barCount');
+      const barTotal = document.getElementById('barTotal');
+
+      if (totalCount > 0) {
+        badge.classList.remove('hidden');
+        badge.innerText = totalCount;
+        bottomBar.classList.remove('hidden');
+        barCount.innerText = `${totalCount} item${totalCount > 1 ? 's' : ''}`;
+        barTotal.innerText = `₦${subtotal.toLocaleString()}`;
+      } else {
+        badge.classList.add('hidden');
+        bottomBar.classList.add('hidden');
+      }
+
+      // Render Drawer items
+      const list = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        list.innerHTML = `
+          <div class="text-center py-8 text-zinc-500 text-xs">
+            <span class="text-3xl block mb-2">🛍️</span>
+            Your bag is empty. Add a viral wig to proceed!
+          </div>
+        `;
+      } else {
+        list.innerHTML = cart.map(item => `
+          <div class="flex items-center justify-between p-2.5 bg-zinc-950 rounded-xl border border-white/5">
+            <div class="flex items-center gap-3">
+              <img src="${item.img}" class="w-12 h-12 rounded-lg object-cover" />
+              <div>
+                <h4 class="text-xs font-bold text-white">${item.name}</h4>
+                <p class="text-[10px] text-brand-pink font-semibold">₦${item.price.toLocaleString()} each</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 rounded bg-zinc-800 text-white font-bold flex items-center justify-center text-xs">-</button>
+              <span class="text-xs font-bold text-white px-1">${item.qty}</span>
+              <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 rounded bg-zinc-800 text-white font-bold flex items-center justify-center text-xs">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      updateDeliveryFee();
+    }
+
+    function updateDeliveryFee() {
+      const state = document.getElementById('custState').value;
+      let deliveryFee = 2500;
+      if (state === 'outside') deliveryFee = 4500;
+      if (state === 'pickup') deliveryFee = 0;
+
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const grandTotal = subtotal + deliveryFee;
+
+      document.getElementById('calcSubtotal').innerText = `₦${subtotal.toLocaleString()}`;
+      document.getElementById('calcDelivery').innerText = deliveryFee === 0 ? 'Free Store Pickup' : `₦${deliveryFee.toLocaleString()}`;
+      document.getElementById('calcTotal').innerText = `₦${grandTotal.toLocaleString()}`;
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cartModal');
+      modal.classList.toggle('hidden');
+    }
+
+    function triggerPaystackDemo() {
+      if (cart.length === 0) {
+        alert('Please add at least one wig to your bag.');
+        return;
+      }
+      const name = document.getElementById('custName').value.trim() || 'Temmy Customer';
+      const address = document.getElementById('custAddress').value.trim() || 'Lagos Delivery';
+      const totalText = document.getElementById('calcTotal').innerText;
+
+      document.getElementById('successName').innerText = name;
+      document.getElementById('successAmount').innerText = totalText;
+      document.getElementById('successAddress').innerText = address;
+
+      toggleCart();
+      document.getElementById('paystackSuccessModal').classList.remove('hidden');
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('paystackSuccessModal').classList.add('hidden');
+      cart = [];
+      updateCartUI();
+    }
+
+    function triggerWhatsAppOrder() {
+      if (cart.length === 0) {
+        alert('Please add at least one wig to your bag.');
+        return;
+      }
+      const name = document.getElementById('custName').value.trim() || 'Valued Customer';
+      const phone = document.getElementById('custPhone').value.trim() || 'Not specified';
+      const state = document.getElementById('custState').options[document.getElementById('custState').selectedIndex].text;
+      const address = document.getElementById('custAddress').value.trim() || 'Lagos';
+      const total = document.getElementById('calcTotal').innerText;
+
+      const itemsText = cart.map(i => `${i.qty}x ${i.name} (₦${(i.price * i.qty).toLocaleString()})`).join(', ');
+
+      const message = `Hello Temmy Beauty Space! I am placing an order from your mobile store:%0A%0A` +
+        `🛍️ *Order Items:* ${itemsText}%0A` +
+        `💰 *Total Amount:* ${total}%0A` +
+        `👤 *Customer Name:* ${name}%0A` +
+        `📞 *Phone:* ${phone}%0A` +
+        `📍 *Delivery Details:* ${address} (${state})%0A%0A` +
+        `Please confirm availability so I can pay immediately!`;
+
+      window.open(`https://wa.me/2348154293425?text=${message}`, '_blank');
+    }
+
+    // Initialize
+    renderProducts();
+  </script>
+</body>
+</html>
