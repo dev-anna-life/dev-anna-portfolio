@@ -66,7 +66,7 @@ export default function Hero() {
             <div className="flex items-center gap-2.5">
               {[
                 { href: 'https://github.com/dev-anna-life', icon: <FaGithub /> },
-                { href: 'https://www.linkedin.com/in/annastesia-amarachi-ugwuanyi-3318a3390/', icon: <FaLinkedinIn /> },
+                { href: 'https://www.linkedin.com/in/annastesia-ugwuanyi/', icon: <FaLinkedinIn /> },
                 { href: 'mailto:annastesiaugwuanyi@gmail.com', icon: <FaEnvelope /> },
               ].map((social) => (
                 <a key={social.href} href={social.href} target="_blank" rel="noreferrer"

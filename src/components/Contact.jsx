@@ -4,7 +4,7 @@ import logo from '../assets/dev-anna-logo-transparent.png'
 
 const socials = [
   { icon: FaGithub, label: 'GitHub', href: 'https://github.com/dev-anna-life' },
-  { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://www.linkedin.com/in/annastesia-amarachi-ugwuanyi-3318a3390/' },
+  { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://www.linkedin.com/in/annastesia-ugwuanyi/' },
   { icon: FaTwitter, label: 'Twitter', href: 'https://x.com/Dev_Anna20/' },
   { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/devanna_22' },
   { icon: FaTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@itsanna136' },
@@ -117,24 +117,26 @@ export default function Contact() {
                     <div className="text-sm font-semibold text-cream">+234 8146790636</div>
                   </div>
                 </a>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-forest-deep border border-cream/20 flex items-center justify-center text-cream shrink-0">
+                                <a href="https://github.com/dev-anna-life" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-forest-deep border border-cream/20 flex items-center justify-center text-cream group-hover:bg-brand-green group-hover:text-forest-deep transition-all duration-200 shrink-0">
                     <FaGithub />
                   </div>
                   <div>
                     <div className="text-xs text-cream/60 font-semibold uppercase tracking-wider mb-0.5">GitHub</div>
                     <div className="text-sm font-semibold text-cream">dev-anna-life</div>
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-forest-deep border border-cream/20 flex items-center justify-center text-cream shrink-0">
+                </a>
+                <a href="https://www.linkedin.com/in/annastesia-ugwuanyi/" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-forest-deep border border-cream/20 flex items-center justify-center text-cream group-hover:bg-brand-green group-hover:text-forest-deep transition-all duration-200 shrink-0">
                     <FaLinkedinIn />
                   </div>
                   <div>
                     <div className="text-xs text-cream/60 font-semibold uppercase tracking-wider mb-0.5">LinkedIn</div>
                     <div className="text-sm font-semibold text-cream">Annastesia Ugwuanyi</div>
                   </div>
-                </div>
+                </a>
               </div>
 
               <div className="flex gap-3 mt-8 pt-6 border-t border-cream/15 flex-wrap">
