@@ -4,7 +4,7 @@ import { FaReact, FaNodeJs, FaDatabase, FaCss3Alt, FaJsSquare } from 'react-icon
 import MagneticButton from './MagneticButton'
 
 const codeBlock = `const engineer = {
-  name: "Annastesia Amarachi",
+  name: "Ugwuanyi Annastesia Amarachi",
   alias: "Dev Anna",
   role: "Full-Stack Software Engineer",
   location: "Nigeria",

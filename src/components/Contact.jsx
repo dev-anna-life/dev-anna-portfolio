@@ -134,7 +134,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-xs text-cream/60 font-semibold uppercase tracking-wider mb-0.5">LinkedIn</div>
-                    <div className="text-sm font-semibold text-cream">Annastesia Ugwuanyi</div>
+                    <div className="text-sm font-semibold text-cream">Ugwuanyi Annastesia Amarachi</div>
                   </div>
                 </a>
               </div>
@@ -204,7 +204,7 @@ export default function Contact() {
                 <small className="text-[7px] font-mono tracking-[0.2em] text-brand-green uppercase font-bold mt-0.5">SOFTWARE ENGINEER</small>
               </span>
             </div>
-            <p className="text-center sm:text-right">© {new Date().getFullYear()} Annastesia Amarachi Ugwuanyi (Dev Anna). Built with modern clean architecture.</p>
+            <p className="text-center sm:text-right">© {new Date().getFullYear()} Ugwuanyi Annastesia Amarachi (Dev Anna). Built with modern clean architecture.</p>
           </div>
 
         </div>
